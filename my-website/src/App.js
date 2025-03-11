@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEnvelope, FaYoutube} from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEnvelope, FaYoutube, FaCode, FaGraduationCap, FaProjectDiagram, FaHome, FaBriefcase} from 'react-icons/fa';
 
 function App() {
   const [typedText, setTypedText] = useState('');
@@ -49,7 +49,7 @@ function App() {
         </div>
 
         {/* Right Section - Content */}
-        <div className="flex-1 text-left">
+        <div className="flex-1 text-left" id="home">
           <h1 className="text-3xl font-cousine mb-4 text-gray-900 dark:text-white">Sup, I'm Mudit 👋 </h1>
           <h2 className="text-xl font-cousine mb-6 min-h-[1.5em] text-gray-600 dark:text-white">{typedText}</h2>
 
@@ -116,7 +116,7 @@ function App() {
               I thrive on solving complex problems and building innovative solutions.
             </p>
 
-            <h3 className="text-lg mb-2">Work Experience</h3>
+            <h3 className="text-lg mb-2" id="work-exp"> Work Experience </h3>
             <ul className="text-sm list-disc pl-5 space-y-2">
               <li><strong>STAT 132 Reader, UCSC</strong> (Jan 2025 - Present)</li>
               <li><strong>Social Media Assistant, UCSC</strong> (Nov 2024 - Feb 2025)</li>
@@ -126,15 +126,15 @@ function App() {
               <li><strong>Undergraduate Teaching Assistant, ASU</strong> (Aug 2021 - May 2022)</li>
             </ul>
 
-            <h3 className="text-lg mb-2">Education</h3>
+            <h3 className="text-lg mb-2" id="education"> Education </h3>
             <p className="text-sm">
               <li><strong>MSNLP @ UC Santa Cruz</strong> </li>
               <li><strong>BSCS @ ASU</strong> </li>
             </p>
 
-            {/* Replace the existing Skills section with this categorized version */}
+            {/* Skills section*/}
 <div className="mt-6 font-cousine text-gray-700 dark:text-white">
-  <h3 className="text-lg mb-3">Skills</h3>
+  <h3 className="text-lg mb-3" id="skills" >Skills</h3>
   
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
     <div>
@@ -162,7 +162,7 @@ function App() {
 </div>
 
 <div className="mt-6 font-cousine text-gray-700 dark:text-white">
-  <h3 className="text-lg mb-4">Projects</h3>
+  <h3 className="text-lg mb-4" id="projects">Projects</h3>
   
   <div className="space-y-6">
     {/* Socially Unsocial */}
@@ -376,6 +376,50 @@ function App() {
   </p>
 </div>
 
+{/* Navigation Icons */}
+<div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 rounded-full backdrop-blur-md bg-white/70 dark:bg-gray-900/70 shadow-lg border border-gray-200 dark:border-gray-700 px-4 py-2">
+  <div className="flex items-center space-x-8">
+    <a 
+      href="#home" 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      aria-label="Home"
+    >
+      <FaHome size={20} />
+    </a>
+    
+    <a 
+      href="#work-exp" 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      aria-label="Work Experience"
+    >
+      <FaBriefcase size={20} />
+    </a>
+    
+    <a 
+      href="#education" 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      aria-label="Education"
+    >
+      <FaGraduationCap size={20} />
+    </a>
+    
+    <a 
+      href="#skills" 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      aria-label="Skills"
+    >
+      <FaCode size={20} />
+    </a>
+    
+    <a 
+      href="#projects" 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      aria-label="Projects"
+    >
+      <FaProjectDiagram size={20} />
+    </a>
+  </div>
+</div>
           </div>
         </div>
       </div>

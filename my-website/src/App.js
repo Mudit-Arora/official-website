@@ -21,6 +21,18 @@ function App() {
     return () => clearInterval(typing);
   }, []);
 
+  const scrollToSection = (e, sectionId) => {
+  e.preventDefault();
+  const element = document.getElementById(sectionId);
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop - 20, // Offset to account for nav
+      behavior: 'smooth'
+    });
+  }
+};
+
+
   // Toggle theme function
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -381,15 +393,17 @@ function App() {
   <div className="flex items-center space-x-8">
     <a 
       href="#home" 
-      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      onClick={(e) => scrollToSection(e, 'home')}
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
       aria-label="Home"
     >
       <FaHome size={20} />
     </a>
     
     <a 
-      href="#work-exp" 
-      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      href="#work-exp"
+      onClick={(e) => scrollToSection(e, 'work-exp')} 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
       aria-label="Work Experience"
     >
       <FaBriefcase size={20} />
@@ -397,23 +411,26 @@ function App() {
     
     <a 
       href="#education" 
-      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      onClick={(e) => scrollToSection(e, 'education')}
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
       aria-label="Education"
     >
       <FaGraduationCap size={20} />
     </a>
     
     <a 
-      href="#skills" 
-      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      href="#skills"
+      onClick={(e) => scrollToSection(e, 'skills')} 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
       aria-label="Skills"
     >
       <FaCode size={20} />
     </a>
     
     <a 
-      href="#projects" 
-      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+      href="#projects"
+      onClick={(e) => scrollToSection(e, 'projects')} 
+      className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
       aria-label="Projects"
     >
       <FaProjectDiagram size={20} />

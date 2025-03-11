@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEn
 function App() {
   const [typedText, setTypedText] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false); // State for theme
-  const fullText = "Machine & Deep Learning Engineer";
+  const fullText = "Full Time Developer | Part Time Gamer | All Time Learner";
 
   useEffect(() => {
     let i = 0;
@@ -107,11 +107,13 @@ function App() {
           </div>
 
           <div className="mt-6 font-cousine text-gray-700 dark:text-white space-y-6">
-            <h3 className="text-lg mb-2">Summary</h3>
+            <h3 className="text-lg mb-2">About</h3>
             <p className="text-sm">
-              Experienced in building and deploying AI models for Healthcare, Education & Software. 
-              Skilled in Python, PyTorch, TensorFlow, NLP, LLMs, Computer Vision, and more. 
-              Driven by solving complex problems through innovative algorithms.
+              I'm a Machine Learning and Deep Learning researcher based in the Bay Area. 
+              My research interests include Data Science, Natural Language Processing, Computer Vision, and Large Language Models. 
+              You'll find me working on projects, reading research papers, and talking to chatbots instead of real people.
+              When I'm not opimizing algorithms or debugging, you can find me playing video games or watching sitcom.
+              I thrive on solving complex problems and building innovative solutions.
             </p>
 
             <h3 className="text-lg mb-2">Work Experience</h3>
@@ -126,14 +128,38 @@ function App() {
 
             <h3 className="text-lg mb-2">Education</h3>
             <p className="text-sm">
-              <strong>MS in NLP, UC Santa Cruz</strong> (Expected Jun 2026, GPA 3.66)  
-              <strong>BS in CS, ASU</strong> (May 2024, Magna Cum Laude, GPA 3.77)
+              <li><strong>MSNLP @ UC Santa Cruz</strong> </li>
+              <li><strong>BSCS @ ASU</strong> </li>
             </p>
 
-            <h3 className="text-lg mb-2">Skills</h3>
-            <p className="text-sm">
-              Python, R, C++, MATLAB, Java, JavaScript, MySQL, PyTorch, TensorFlow, scikit-learn, OpenCV, AWS, Azure, Git
-            </p>
+            {/* Replace the existing Skills section with this categorized version */}
+<div className="mt-6 font-cousine text-gray-700 dark:text-white">
+  <h3 className="text-lg mb-3">Skills</h3>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+    <div>
+      <h4 className="font-bold mb-1">Programming Languages</h4>
+      <p className="mb-3">Python, JavaScript, Swift, R, HTML/CSS, C++, Java, MATLAB</p>
+      
+      <h4 className="font-bold mb-1">AI & Machine Learning</h4>
+      <p className="mb-3">PyTorch, TensorFlow, Keras, scikit-learn, NLTK, spaCy, OpenCV</p>
+    </div>
+    
+    <div>
+      <h4 className="font-bold mb-1">Web Development</h4>
+      <p className="mb-3">React.js, Node.js, Django, Flask, HTML/CSS</p>
+      
+      <h4 className="font-bold mb-1">Mobile Development</h4>
+      <p className="mb-3">SwiftUI, UIKit, iOS Development</p>
+      
+      <h4 className="font-bold mb-1">Data Science</h4>
+      <p className="mb-3">Pandas, NumPy, Matplotlib, Seaborn, Plotly, MySQL, Spark</p>
+
+      <h4 className="font-bold mb-1">Tools & Platforms</h4>
+      <p>AWS, Azure, Git</p>
+    </div>
+  </div>
+</div>
 
             <h3 className="text-lg mb-2">Projects</h3>
             <ul className="text-sm list-disc pl-5 space-y-2">

@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEnvelope} from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEnvelope, FaYoutube} from 'react-icons/fa';
 
 function App() {
   const [typedText, setTypedText] = useState('');
@@ -42,7 +42,7 @@ function App() {
         {/* Left Section - Image */}
         <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 mr-6 mb-6 md:mb-0 rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600">
           <img 
-            src="/pic.jpeg"
+            src="/images/profile-pic.jpeg"
             alt="mudit-arora's profile picture" 
             className="w-full h-full object-cover"
           />
@@ -64,7 +64,7 @@ function App() {
                 <FaGithub size={20} className="mr-2" /> 
               </a>
               <a 
-                href="https://linkedin.com/in/muditarora" // Replace with your actual LinkedIn URL
+                href="https://linkedin.com/in/muditarora" 
                 className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,7 +80,7 @@ function App() {
                   <FaLink size={20} className="mr-2" />
                 </a>
                 <a 
-                  href="" 
+                  href="/MuditAroraResume_SWE.pdf" 
                   className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -139,7 +139,7 @@ function App() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
     <div>
       <h4 className="font-bold mb-1">Programming Languages</h4>
-      <p className="mb-3">Python, JavaScript, Swift, R, HTML/CSS, C++, Java, MATLAB</p>
+      <p className="mb-3">Python, Swift, JavaScript, R, C++, Java, MATLAB</p>
       
       <h4 className="font-bold mb-1">AI & Machine Learning</h4>
       <p className="mb-3">PyTorch, TensorFlow, Keras, scikit-learn, NLTK, spaCy, OpenCV</p>
@@ -161,10 +161,220 @@ function App() {
   </div>
 </div>
 
-            <h3 className="text-lg mb-2">Projects</h3>
-            <ul className="text-sm list-disc pl-5 space-y-2">
-              <li><strong>Multi-Lingual Emotion Detection System</strong></li>
-            </ul>
+<div className="mt-6 font-cousine text-gray-700 dark:text-white">
+  <h3 className="text-lg mb-4">Projects</h3>
+  
+  <div className="space-y-6">
+    {/* Socially Unsocial */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/socially-unsocial.png" 
+          alt="Socially Unsocial app" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Socially Unsocial</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://www.loom.com/share/bcc65c60c381479d9f416a20986ea431?sid=979070cf-46e8-47c6-a3f2-da211f63091b" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaYoutube size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">React.js</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Supabase</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Full-Stack</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Full-stack social media application featuring dynamic content creation with multimedia support, real-time comment functionality, and content filtering capabilities.
+        </p>
+      </div>
+    </div>
+    
+    {/* Multi-Lingual Emotion Detection System */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/emotion-detection.png" 
+          alt="Emotion Detection System" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Multi-Lingual Emotion Detection System – SemEval 2025</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://github.com/Mudit-Arora/semeval-task11" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+            <a href="/NLP243ProjectReport.pdf"
+               className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaFileAlt size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">PyTorch</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">NLP</span>
+          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">LSTM/BiLSTM</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Multi-lingual</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Architected both LSTM and BiLSTM models for single and cross-language emotion detection, achieving competitive results in the SemEval 2025 competition.
+        </p>
+      </div>
+    </div>
+    
+    {/* ParkPal */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/parkpal.png" 
+          alt="ParkPal app" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>ParkPal</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://github.com/Mudit-Arora/ParkPal" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+            <a href="https://youtu.be/KRMCgYt3N_I?si=Jk-4k1mnpJbAB1kJ" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaYoutube size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Swift</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">SwiftUI</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">iOS</span>
+          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">CoreData</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          iOS application that locates nearby parking spots with directions and CoreData integration for saving favorite parking locations.
+        </p>
+      </div>
+    </div>
+    
+    {/* Language Modelling */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/language-model.png" 
+          alt="Language Model architecture" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Language Modelling</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="/NLP_243_Homework_3.pdf" 
+               className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaFileAlt size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">PyTorch</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Transformers</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">NLP</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Engineered a decoder-only transformer architecture from scratch using PyTorch, focusing on next-word prediction tasks.
+        </p>
+      </div>
+    </div>
+    
+    {/* Photo Share */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/photo-share.png" 
+          alt="Photo Share application" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Photo Share</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://youtu.be/JONdeJ6hhk0?si=OfrA7bstTST0hCVh" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaYoutube size={16} />
+            </a>
+            <a href="https://github.com/Mudit-Arora/Photo-Share-" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">HTML/CSS</span>
+          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">JavaScript</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Node.js</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">SQL</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Instagram-inspired web application with comprehensive features including user authentication, photo sharing, and social engagement.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="w-full text-center py-6 mt-12 text-gray-500 dark:text-gray-400 text-sm">
+  <p className="flex items-center justify-center">
+    Made with 
+    <svg 
+      className="w-5 h-5 mx-1 text-red-500 animate-pulse" 
+      fill="currentColor" 
+      viewBox="0 0 20 20" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        fillRule="evenodd" 
+        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" 
+        clipRule="evenodd"
+      />
+    </svg>
+    by Mudit Arora
+  </p>
+</div>
 
           </div>
         </div>

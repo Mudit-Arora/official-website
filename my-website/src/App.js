@@ -62,13 +62,14 @@ function App() {
 
         {/* Right Section - Content */}
         <div className="flex-1 text-left" id="home">
-          <h1 className="text-3xl font-cousine mb-4 text-gray-900 dark:text-white">Sup, I'm Mudit 👋 </h1>
+          <h1 className="text-3xl font-cousine mb-4 text-gray-900 dark:text-white">
+             Sup, I'm Mudit <span className="waving-hand">👋</span></h1>
           <h2 className="text-xl font-cousine mb-6 min-h-[1.5em] text-gray-600 dark:text-white">{typedText}</h2>
 
           <div className="font-cousine text-gray-800 dark:text-white space-y-6">
             <div className="flex space-x-6">
               <a 
-                href="https://github.com/Mudit-Arara" 
+                href="https://github.com/Mudit-Arora" 
                 className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -76,7 +77,7 @@ function App() {
                 <FaGithub size={20} className="mr-2" /> 
               </a>
               <a 
-                href="https://linkedin.com/in/muditarora" 
+                href="https://linkedin.com/in/aroramudit" 
                 className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -78,13 +78,30 @@ function App() {
 
             <h3 className="text-lg mb-2">Work Experience</h3>
             <p className="text-sm">
+              <strong>STAT 132 Reader, UCSC</strong> (Jan 2025 - Present)  
+            </p>
+            <p className="text-sm">
+              <strong>Social Media Assistant, UCSC</strong> (Nov 2024 - Feb 2025)  
+            </p>
+            <p className="text-sm">
               <strong>Machine Learning Researcher, Mayo Clinic</strong> (Aug 2023 - May 2024)  
-              Fine-tuned a TS-based LLM, achieving 87% accuracy in predicting patient readmission.
             </p>
             <p className="text-sm">
               <strong>Software Engineering Tutor, ASU</strong> (Feb 2022 - May 2024)  
-              Mentored 20+ students weekly, boosting performance by 95%.
             </p>
+            <p className="text-sm">
+              <strong>Machine Learning Researcher, Mayo Clinic</strong> (Aug 2023 - May 2024)  
+            </p>
+            <p className="text-sm">
+              <strong>Software Engineering Tutor, ASU</strong> (Feb 2022 - May 2024)  
+            </p>
+            <p className="text-sm">
+              <strong>Software Quality Assurance Intern, Knight Transportation</strong> (May 2022 - Aug 2022)  
+            </p>
+            <p className="text-sm">
+              <strong>Undergraduate Teaching Assistant, ASU</strong> (Aug 2021 - May 2022)  
+            </p>
+
 
             <h3 className="text-lg mb-2">Projects</h3>
             <p className="text-sm">

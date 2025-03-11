@@ -42,7 +42,7 @@ function App() {
         {/* Left Section - Image */}
         <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 mr-6 mb-6 md:mb-0 rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600">
           <img 
-            src="https://via.placeholder.com/150" 
+            src="/pic.jpeg"
             alt="Mudit Arora" 
             className="w-full h-full object-cover"
           />
@@ -50,28 +50,26 @@ function App() {
 
         {/* Right Section - Content */}
         <div className="flex-1 text-left">
-          <h1 className="text-3xl font-cousine mb-4 text-gray-900 dark:text-gray-100">Mudit Arora</h1>
-          <h2 className="text-xl font-cousine mb-6 min-h-[1.5em] text-gray-600 dark:text-gray-400">{typedText}</h2>
+          <h1 className="text-3xl font-cousine mb-4 text-gray-900 dark:text-white">Mudit Arora</h1>
+          <h2 className="text-xl font-cousine mb-6 min-h-[1.5em] text-gray-600 dark:text-white">{typedText}</h2>
 
-          <div className="font-cousine text-gray-800 dark:text-gray-200 space-y-6">
-            <p>Santa Clara, CA | +1 (602) 545-7387</p>
-            <p>muditarora31@gmail.com</p>
+          <div className="font-cousine text-gray-800 dark:text-white space-y-6">
             <div className="flex space-x-6">
               <a 
                 href="https://github.com/Mudit-Arara" 
-                className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
+                className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="mr-2" /> GitHub
+                <FaGithub className="mr-2" /> 
               </a>
               <a 
                 href="https://linkedin.com/in/muditarora" // Replace with your actual LinkedIn URL
-                className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
+                className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="mr-2" /> LinkedIn
+                <FaLinkedin className="mr-2" /> 
               </a>
               <a 
                 href="https://portfolio.com" 
@@ -84,7 +82,7 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-6 font-cousine text-gray-700 dark:text-gray-300 space-y-6">
+          <div className="mt-6 font-cousine text-gray-700 dark:text-white space-y-6">
             <h3 className="text-lg mb-2">Summary</h3>
             <p className="text-sm">
               Experienced in building and deploying AI models for Healthcare, Education & Software. 
@@ -123,7 +121,7 @@ function App() {
               I’m passionate about leveraging AI to solve real-world challenges and enjoy exploring new technologies in my free time.
             </p>
 
-            <h3 className="text-lg mb-2">Stay Updated</h3> {/* Inspired by GitHub's newsletter */}
+            <h3 className="text-lg mb-2">Stay Updated</h3>
             <p className="text-sm">
               Get tips and updates on my AI projects. Subscribe below!  
               <a href="mailto:muditarora31@gmail.com?subject=Subscribe" className="text-blue-600 dark:text-blue-400 hover:underline">Subscribe</a>

@@ -144,7 +144,7 @@ function App() {
 
             <h3 className="text-lg mb-2" id="work-exp"> Work Experience </h3>
             <ul className="text-sm list-disc pl-5 space-y-2">
-              <li><strong>Graduate Teaching Assitant, UCSC</strong> (Apr 2025 - Present)</li>
+              <li><strong>Graduate Teaching Assistant, UCSC</strong> (Apr 2025 - Present)</li>
               <li><strong>STAT Course Grader, UCSC</strong> (Jan 2025 - Mar 2025)</li>
               <li><strong>Social Media Assistant, UCSC</strong> (Nov 2024 - Feb 2025)</li>
               <li><strong>Machine Learning Researcher, Mayo Clinic</strong> (Aug 2023 - May 2024)</li>
@@ -268,42 +268,7 @@ function App() {
       </div>
     </div>
 
-
-    {/* Socially Unsocial */}
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
-        <img 
-          src="/images/socially-unsocial.png" 
-          alt="Socially Unsocial app" 
-          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div className="bg-gray-50 dark:bg-gray-800 p-4">
-        <h4 className="font-bold text-lg flex items-center">
-          <span>Socially Unsocial</span>
-          <div className="ml-auto flex space-x-2">
-            <a href="https://www.loom.com/share/bcc65c60c381479d9f416a20986ea431?sid=979070cf-46e8-47c6-a3f2-da211f63091b" 
-               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <FaYoutube size={16} />
-            </a>
-          </div>
-        </h4>
-        <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">React.js</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Supabase</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Full-Stack</span>
-        </div>
-      </div>
-      <div className="p-4">
-        <p className="text-sm">
-          Full-stack social media application featuring dynamic content creation with multimedia support, real-time comment functionality, and content filtering capabilities.
-        </p>
-      </div>
-    </div>
-    
-    {/* Multi-Lingual Emotion Detection System */}
+        {/* Multi-Lingual Emotion Detection System */}
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
         <img 
@@ -334,7 +299,7 @@ function App() {
           <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">PyTorch</span>
           <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">NLP</span>
           <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">LSTM/BiLSTM</span>
-          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Multi-lingual</span>
+          {/*<span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Multi-lingual</span>*/}
         </div>
       </div>
       <div className="p-4">
@@ -343,6 +308,75 @@ function App() {
         </p>
       </div>
     </div>
+
+        {/* Language Modelling */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/language-model.png" 
+          alt="Language Model architecture" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Language Modelling</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="/NLP_243_Homework_3.pdf" 
+               className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaFileAlt size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">PyTorch</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Transformers</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">NLP</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Engineered a decoder-only transformer architecture from scratch using PyTorch, focusing on next-word prediction tasks.
+        </p>
+      </div>
+    </div>
+
+    {/* Socially Unsocial */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/socially-unsocial.png" 
+          alt="Socially Unsocial app" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Socially Unsocial</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://www.loom.com/share/bcc65c60c381479d9f416a20986ea431?sid=979070cf-46e8-47c6-a3f2-da211f63091b" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaYoutube size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">React.js + Tailwind</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Supabase</span>
+          {/*<span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Full-Stack</span>*/}
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Full-stack social media application featuring dynamic content creation with multimedia support, real-time comment functionality, and content filtering capabilities.
+        </p>
+      </div>
+    </div>
+    
     
     {/* ParkPal */}
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
@@ -374,47 +408,13 @@ function App() {
         <div className="flex flex-wrap gap-2 mt-2">
           <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Swift</span>
           <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">SwiftUI</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">iOS</span>
+          {/*<span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">iOS</span>*/}
           <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">CoreData</span>
         </div>
       </div>
       <div className="p-4">
         <p className="text-sm">
           iOS application that locates nearby parking spots with directions and CoreData integration for saving favorite parking locations.
-        </p>
-      </div>
-    </div>
-    
-    {/* Language Modelling */}
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
-        <img 
-          src="/images/language-model.png" 
-          alt="Language Model architecture" 
-          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div className="bg-gray-50 dark:bg-gray-800 p-4">
-        <h4 className="font-bold text-lg flex items-center">
-          <span>Language Modelling</span>
-          <div className="ml-auto flex space-x-2">
-            <a href="/NLP_243_Homework_3.pdf" 
-               className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <FaFileAlt size={16} />
-            </a>
-          </div>
-        </h4>
-        <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">PyTorch</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Transformers</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">NLP</span>
-        </div>
-      </div>
-      <div className="p-4">
-        <p className="text-sm">
-          Engineered a decoder-only transformer architecture from scratch using PyTorch, focusing on next-word prediction tasks.
         </p>
       </div>
     </div>

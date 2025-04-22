@@ -5,7 +5,9 @@ import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEn
 
 function App() {
   const [typedText, setTypedText] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(false); // State for theme
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
   const fullText = "Full Time Developer | Part Time Gamer | All Time Learner";
 
   useEffect(() => {
@@ -37,6 +39,16 @@ function App() {
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => {
+      setIsDarkMode(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark bg-gray-900' : 'bg-white'} flex items-center justify-center p-6 transition-colors duration-300`}>

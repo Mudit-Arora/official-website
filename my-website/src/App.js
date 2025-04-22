@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEnvelope, FaYoutube, FaCode, FaGraduationCap, FaProjectDiagram, FaHome, FaBriefcase} from 'react-icons/fa';
+import { SiDevpost } from "react-icons/si";
 
 function App() {
   const [typedText, setTypedText] = useState('');
@@ -105,7 +106,7 @@ function App() {
                   <FaLink size={20} className="mr-2" />
                 </a>
                 <a 
-                  href="/MuditAroraResume_SWE.pdf" 
+                  href="/MuditAroraResume_ML.pdf" 
                   className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -143,7 +144,8 @@ function App() {
 
             <h3 className="text-lg mb-2" id="work-exp"> Work Experience </h3>
             <ul className="text-sm list-disc pl-5 space-y-2">
-              <li><strong>STAT 132 Reader, UCSC</strong> (Jan 2025 - Present)</li>
+              <li><strong>Graduate Teaching Assitant, UCSC</strong> (Apr 2025 - Present)</li>
+              <li><strong>STAT Course Grader, UCSC</strong> (Jan 2025 - Mar 2025)</li>
               <li><strong>Social Media Assistant, UCSC</strong> (Nov 2024 - Feb 2025)</li>
               <li><strong>Machine Learning Researcher, Mayo Clinic</strong> (Aug 2023 - May 2024)</li>
               <li><strong>Software Engineering Tutor, ASU</strong> (Feb 2022 - May 2024)</li>
@@ -153,7 +155,7 @@ function App() {
 
             <h3 className="text-lg mb-2" id="education"> Education </h3>
             <p className="text-sm">
-              <li><strong>MSNLP @ UC Santa Cruz</strong> </li>
+              <li><strong>MSAI @ UC Santa Cruz</strong> </li>
               <li><strong>BSCS @ ASU</strong> </li>
             </p>
 
@@ -181,7 +183,7 @@ function App() {
       <p className="mb-3">Pandas, NumPy, Matplotlib, Seaborn, Plotly, MySQL, Spark</p>
 
       <h4 className="font-bold mb-1">Tools & Platforms</h4>
-      <p>AWS, Azure, Git</p>
+      <p>AWS, Azure, Git, Docker</p>
     </div>
   </div>
 </div>
@@ -190,6 +192,83 @@ function App() {
   <h3 className="text-lg mb-4" id="projects">Projects</h3>
   
   <div className="space-y-6">
+    {/* SlugMeditate */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/slugmeditate.jpg" 
+          alt="" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>SlugMeditate - CruzHacks 2025 Winner 🏆</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://slugmeditate.tech/" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaLink size={16} />
+            </a>
+            <a href="https://devpost.com/software/slugmeditate?_gl=1*1fhz630*_gcl_au*MTc1MDgzMzkzOC4xNzQxMjA2Mzk0*_ga*MTEzNzk5MDA0MS4xNzQxMjA2Mzk0*_ga_0YHJK3Y10M*MTc0NTI5NTM5Mi4xMS4xLjE3NDUyOTYwMDUuMC4wLjA." 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <SiDevpost size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Python</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Gemini API</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Niantic Studio</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Next.js</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          A pipeline that transforms your thoughts into a 3D ambient escape. SlugMeditate takes a text input from the user and transforms it into Image Generation, Video Creation, Music Generation, 3D Scene Mapping, and finally VR Immersion.
+        </p>
+      </div>
+    </div>
+
+    {/* AmICooked.Chat */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/amicookedchat.jpg" 
+          alt="" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>AmICooked.Chat - HackDavis 2025</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://devpost.com/software/amicooked-chat?ref_content=my-projects-tab&ref_feature=my_projects"
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <SiDevpost size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Python</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Gemini API</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">FastAPI</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">React + Tailwind</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          A chrome browser extension that passively tracks your browser activity (tab switches, app changes, timestamps), groups them into sessions using heuristics, and summarizes user focus using LLMs as efficiently as possible. 
+        </p>
+      </div>
+    </div>
+
+
     {/* Socially Unsocial */}
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">

@@ -106,7 +106,7 @@ function App() {
                   <FaLink size={20} className="mr-2" />
                 </a>
                 <a 
-                  href="/MuditAroraResume_ML.pdf" 
+                  href="/MuditAroraResume.pdf" 
                   className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"

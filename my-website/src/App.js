@@ -1,6 +1,7 @@
 // App.jsx
 import React, { useEffect, useState } from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from "@vercel/analytics/react"
 import './App.css';
 import { FaGithub, FaLinkedin, FaSun, FaMoon, FaLink, FaFileAlt, FaTwitter, FaEnvelope, FaYoutube, FaCode, FaGraduationCap, FaProjectDiagram, FaHome, FaBriefcase} from 'react-icons/fa';
 import { SiDevpost } from "react-icons/si";
@@ -534,6 +535,7 @@ function App() {
         </div>
       </div>
       <SpeedInsights />
+      <Analytics />
     </div>
   );
 }

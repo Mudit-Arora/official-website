@@ -171,15 +171,15 @@ function App() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
     <div>
       <h4 className="font-bold mb-1">Programming Languages</h4>
-      <p className="mb-3">Python, Swift, JavaScript, R, C++, Java, MATLAB</p>
+      <p className="mb-3">Python, R, JavaScript, TypeScript, C++, Java, Swift, MATLAB</p>
       
       <h4 className="font-bold mb-1">AI & Machine Learning</h4>
-      <p className="mb-3">PyTorch, TensorFlow, Keras, scikit-learn, NLTK, spaCy, OpenCV</p>
+      <p className="mb-3">PyTorch, TensorFlow, Keras, scikit-learn, MLX, NLTK, spaCy, OpenCV, LangChain, AutoGen</p>
     </div>
     
     <div>
       <h4 className="font-bold mb-1">Web Development</h4>
-      <p className="mb-3">React.js, Node.js, Django, Flask, HTML/CSS</p>
+      <p className="mb-3">React.js, Node.js, Next.js, Django, Flask, HTML/CSS</p>
       
       <h4 className="font-bold mb-1">Mobile Development</h4>
       <p className="mb-3">SwiftUI, UIKit, iOS Development</p>
@@ -188,7 +188,7 @@ function App() {
       <p className="mb-3">Pandas, NumPy, Matplotlib, Seaborn, Plotly, MySQL, Spark</p>
 
       <h4 className="font-bold mb-1">Tools & Platforms</h4>
-      <p>AWS, Azure, Git, Docker</p>
+      <p>Hugging Face, Ollama, Make.com, AWS (S3), GCP, Azure, Git, Docker, Postman</p>
     </div>
   </div>
 </div>

@@ -70,7 +70,7 @@ function App() {
         <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 mr-6 mb-6 md:mb-0 rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600">
           <img 
             src="./images/profile-pic.jpeg"
-            alt="mudit-arora's profile picture" 
+            alt="mudit-arora's profile" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -503,7 +503,7 @@ function App() {
       <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
         <img 
           src="/images/photo-share.png" 
-          alt="Photo Share application" 
+          alt="Share app interface" 
           className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
         />
       </div>

@@ -208,7 +208,7 @@ function App() {
       </div>
       <div className="bg-gray-50 dark:bg-gray-800 p-4">
         <h4 className="font-bold text-lg flex items-center">
-          <span>EduVoice AI</span>
+          <span>EduVoice AI - YC Hackathon</span>
           <div className="ml-auto flex space-x-2">
             <a href="https://github.com/yooleee/Vibecon-Education-Platform" 
                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
@@ -232,6 +232,40 @@ function App() {
         <p className="text-sm">
           Full-stack Voice AI platform using enabling students to interact with uploaded lecture content through multilingual voice
           powered conversations, automated quizzes, and AI-generated summary. 
+        </p>
+      </div>
+    </div>
+
+    {/* Project 2 - Placeholder */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/project-2.png" 
+          alt="Project 2" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Project Title 2</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="#" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Tech 1</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Tech 2</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Tech 3</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Project description goes here. Add details about what this project does and what technologies it uses.
         </p>
       </div>
     </div>
@@ -535,6 +569,40 @@ function App() {
       <div className="p-4">
         <p className="text-sm">
           Instagram-inspired web application with comprehensive features including user authentication, photo sharing, and social engagement.
+        </p>
+      </div>
+    </div>
+
+    {/* New Project - Placeholder */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/new-project.png" 
+          alt="New Project" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Project Title</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="#" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Tech 1</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Tech 2</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Tech 3</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          Project description goes here. Add details about what this project does and what technologies it uses.
         </p>
       </div>
     </div>

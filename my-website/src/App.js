@@ -236,36 +236,43 @@ function App() {
       </div>
     </div>
 
-    {/* Project 2 - Placeholder */}
+    {/* Brainrot Roast Chatbot */}
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
         <img 
-          src="/images/project-2.png" 
+          src="/images/brainrot.png" 
           alt="Project 2" 
           className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
         />
       </div>
       <div className="bg-gray-50 dark:bg-gray-800 p-4">
         <h4 className="font-bold text-lg flex items-center">
-          <span>Project Title 2</span>
+          <span>Brainrot Roast Chatbot - Dumbathon @ UCSC</span>
           <div className="ml-auto flex space-x-2">
-            <a href="#" 
+            <a href="https://github.com/Dumb-team-Dumbathon/current-build.git" 
                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                target="_blank" 
                rel="noopener noreferrer">
               <FaGithub size={16} />
             </a>
+            <a href="https://drive.google.com/file/d/1nDsUMpy39ZZ10GNw3nSqksPhJbcH0o8l/view?usp=share_link" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaYoutube size={16} />
+            </a>
           </div>
         </h4>
         <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Tech 1</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Tech 2</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Tech 3</span>
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">OpenAI API</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Cartesia</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Giphy API</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">React</span>
         </div>
       </div>
       <div className="p-4">
         <p className="text-sm">
-          Project description goes here. Add details about what this project does and what technologies it uses.
+          A chatbot that roasts you with maximum brainrot energy and replies with GIFs of sigma males, skibidi toilet, gigachads, and other peak internet culture moments.
         </p>
       </div>
     </div>

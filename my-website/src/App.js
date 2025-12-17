@@ -146,8 +146,8 @@ function App() {
 
             <h3 className="text-lg mb-2" id="work-exp"> Work Experience </h3>
             <ul className="text-sm list-disc pl-5 space-y-2">
-              <li><strong>Deep Learning Researcher, Uniphore</strong> (May 2025 - Present)</li>
-              <li><strong>Computer Science Grader, UCSC</strong> (Oct 2025 - Present)</li>
+              <li><strong>Deep Learning Researcher, Uniphore</strong> (May 2025 - Dec 2025)</li>
+              <li><strong>Computer Science Grader, UCSC</strong> (Oct 2025 - Dec 2025)</li>
               <li><strong>AI Software Engineer Intern, CRED</strong> (May 2025 - Spet 2025)</li>
               <li><strong>Graduate Teaching Assistant, UCSC</strong> (Apr 2025 - June 2025)</li>
               <li><strong>STAT Course Grader, UCSC</strong> (Jan 2025 - Mar 2025)</li>

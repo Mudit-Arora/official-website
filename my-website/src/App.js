@@ -197,121 +197,6 @@ function App() {
   <h3 className="text-lg mb-4" id="projects">Projects</h3>
   
   <div className="space-y-6">
-    {/* EduVoice AI */}
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
-        <img 
-          src="/images/EduVoice AI.png" 
-          alt="Project 9" 
-          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div className="bg-gray-50 dark:bg-gray-800 p-4">
-        <h4 className="font-bold text-lg flex items-center">
-          <span>EduVoice AI - YC Hackathon</span>
-          <div className="ml-auto flex space-x-2">
-            <a href="https://github.com/yooleee/Vibecon-Education-Platform" 
-               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <FaGithub size={16} />
-            </a>
-          </div>
-        </h4>
-        <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Emergent</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Cartesia</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Deepgram</span>
-          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">LiveKit</span>
-          <span className="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-md text-xs">Silero VAD</span>
-          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">React + Tailwind</span>
-          <span className="px-2 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded-md text-xs">OpenAI API</span>
-        </div>
-      </div>
-      <div className="p-4">
-        <p className="text-sm">
-          Full-stack Voice AI platform using enabling students to interact with uploaded lecture content through multilingual voice
-          powered conversations, automated quizzes, and AI-generated summary. 
-        </p>
-      </div>
-    </div>
-
-    {/* Brainrot Roast Chatbot */}
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
-        <img 
-          src="/images/brainrot.png" 
-          alt="Project 2" 
-          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div className="bg-gray-50 dark:bg-gray-800 p-4">
-        <h4 className="font-bold text-lg flex items-center">
-          <span>Brainrot Roast Chatbot - Dumbathon @ UCSC</span>
-          <div className="ml-auto flex space-x-2">
-            <a href="https://github.com/Dumb-team-Dumbathon/current-build.git" 
-               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <FaGithub size={16} />
-            </a>
-            <a href="https://drive.google.com/file/d/1nDsUMpy39ZZ10GNw3nSqksPhJbcH0o8l/view?usp=share_link" 
-               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <FaYoutube size={16} />
-            </a>
-          </div>
-        </h4>
-        <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">OpenAI API</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Cartesia</span>
-          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Giphy API</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">React</span>
-        </div>
-      </div>
-      <div className="p-4">
-        <p className="text-sm">
-          A chatbot that roasts you with maximum brainrot energy and replies with GIFs of sigma males, skibidi toilet, gigachads, and other peak internet culture moments.
-        </p>
-      </div>
-    </div>
-
-    {/* EduMUSE */}
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
-        <img 
-          src="/images/EduMUSE.png" 
-          alt="Project 10" 
-          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div className="bg-gray-50 dark:bg-gray-800 p-4">
-        <h4 className="font-bold text-lg flex items-center">
-          <span>EduMUSE</span>
-          <div className="ml-auto flex space-x-2">
-            <a href="https://github.com/iamsorenl/EduMUSE" 
-               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <FaGithub size={16} />
-            </a>
-          </div>
-        </h4>
-        <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Crew AI</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">SerperDev</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">ElevenLabs</span>
-          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">React + Material UI</span>
-          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">OpenAI API</span>
-        </div>
-      </div>
-      <div className="p-4">
-        <p className="text-sm">
-          A comprehensive AI tutoring system that transforms study materials into personalized learning experiences. The platform combines document processing, knowledge retrieval, and interactive tutoring through a modular multi-agent architecture.        </p>
-      </div>
-    </div>
-
     {/* SlugMeditate */}
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
@@ -353,37 +238,117 @@ function App() {
       </div>
     </div>
 
-    {/* AmICooked.Chat */}
+    {/* EduVoice AI */}
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
         <img 
-          src="/images/amicookedchat.jpg" 
-          alt="" 
+          src="/images/EduVoice AI.png" 
+          alt="Project 9" 
           className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
         />
       </div>
       <div className="bg-gray-50 dark:bg-gray-800 p-4">
         <h4 className="font-bold text-lg flex items-center">
-          <span>AmICooked.Chat - HackDavis 2025</span>
+          <span>EduVoice AI - YC Hackathon</span>
           <div className="ml-auto flex space-x-2">
-            <a href="https://devpost.com/software/amicooked-chat?ref_content=my-projects-tab&ref_feature=my_projects"
-               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+            <a href="https://github.com/yooleee/Vibecon-Education-Platform" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                target="_blank" 
                rel="noopener noreferrer">
-              <SiDevpost size={16} />
+              <FaGithub size={16} />
             </a>
           </div>
         </h4>
         <div className="flex flex-wrap gap-2 mt-2">
-          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Python</span>
-          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Gemini API</span>
-          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">FastAPI</span>
-          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">React + Tailwind</span>
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Emergent</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Cartesia</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">Deepgram</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">LiveKit</span>
+          <span className="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-md text-xs">Silero VAD</span>
+          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">React + Tailwind</span>
+          <span className="px-2 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded-md text-xs">OpenAI API</span>
         </div>
       </div>
       <div className="p-4">
         <p className="text-sm">
-          A chrome browser extension that passively tracks your browser activity (tab switches, app changes, timestamps), groups them into sessions using heuristics, and summarizes user focus using LLMs as efficiently as possible. 
+          Full-stack Voice AI platform using enabling students to interact with uploaded lecture content through multilingual voice
+          powered conversations, automated quizzes, and AI-generated summary. 
+        </p>
+      </div>
+    </div>
+
+    {/* EduMUSE */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/EduMUSE.png" 
+          alt="Project 10" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>EduMUSE</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://github.com/iamsorenl/EduMUSE" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Crew AI</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">SerperDev</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">ElevenLabs</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">React + Material UI</span>
+          <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md text-xs">OpenAI API</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          A comprehensive AI tutoring system that transforms study materials into personalized learning experiences. The platform combines document processing, knowledge retrieval, and interactive tutoring through a modular multi-agent architecture.        </p>
+      </div>
+    </div>
+
+    {/* Brainrot Roast Chatbot */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/brainrot.png" 
+          alt="Project 2" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>Brainrot Roast Chatbot - Dumbathon @ UCSC</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://github.com/Dumb-team-Dumbathon/current-build.git" 
+               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaGithub size={16} />
+            </a>
+            <a href="https://drive.google.com/file/d/1nDsUMpy39ZZ10GNw3nSqksPhJbcH0o8l/view?usp=share_link" 
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <FaYoutube size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">OpenAI API</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Cartesia</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">Giphy API</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">React</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          A chatbot that roasts you with maximum brainrot energy and replies with GIFs of sigma males, skibidi toilet, gigachads, and other peak internet culture moments.
         </p>
       </div>
     </div>
@@ -459,6 +424,41 @@ function App() {
       <div className="p-4">
         <p className="text-sm">
           Engineered a decoder-only transformer architecture from scratch using PyTorch, focusing on next-word prediction tasks.
+        </p>
+      </div>
+    </div>
+
+    {/* AmICooked.Chat */}
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+        <img 
+          src="/images/amicookedchat.jpg" 
+          alt="" 
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="bg-gray-50 dark:bg-gray-800 p-4">
+        <h4 className="font-bold text-lg flex items-center">
+          <span>AmICooked.Chat - HackDavis 2025</span>
+          <div className="ml-auto flex space-x-2">
+            <a href="https://devpost.com/software/amicooked-chat?ref_content=my-projects-tab&ref_feature=my_projects"
+               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <SiDevpost size={16} />
+            </a>
+          </div>
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md text-xs">Python</span>
+          <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md text-xs">Gemini API</span>
+          <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md text-xs">FastAPI</span>
+          <span className="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md text-xs">React + Tailwind</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-sm">
+          A chrome browser extension that passively tracks your browser activity (tab switches, app changes, timestamps), groups them into sessions using heuristics, and summarizes user focus using LLMs as efficiently as possible. 
         </p>
       </div>
     </div>

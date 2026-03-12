@@ -138,7 +138,7 @@ function App() {
             <h3 className="text-lg mb-2">About</h3>
             <p className="text-sm">
               I'm a Machine Learning and Deep Learning researcher based in the Bay Area. 
-              My research interests include Data Science, Natural Language Processing, Computer Vision, Large Language Models, and Generative AI. 
+              My research interests include Natural Language Processing, Large Language Models, and Generative AI (Voice AI currently). 
               You'll find me working on projects, reading research papers, and talking to chatbots instead of real people.
               When I'm not optimizing algorithms or debugging, you can find me playing video games or watching sitcom.
               I thrive on solving complex problems and building innovative solutions.
@@ -146,9 +146,10 @@ function App() {
 
             <h3 className="text-lg mb-2" id="work-exp"> Work Experience </h3>
             <ul className="text-sm list-disc pl-5 space-y-2">
-              <li><strong>Deep Learning Researcher, Uniphore</strong> (May 2025 - Dec 2025)</li>
+              <li><strong>AI Engineer, EzMedTech AI</strong> (Feb 2026 - Present)</li>
+              <li><strong>Deep Learning Researcher, Uniphore</strong> (May 2025 - Feb 2026)</li>
               <li><strong>Computer Science Grader, UCSC</strong> (Oct 2025 - Dec 2025)</li>
-              <li><strong>AI Software Engineer Intern, CRED</strong> (May 2025 - Spet 2025)</li>
+              <li><strong>AI Software Engineer Intern, CRED</strong> (May 2025 - Sept 2025)</li>
               <li><strong>Graduate Teaching Assistant, UCSC</strong> (Apr 2025 - June 2025)</li>
               <li><strong>STAT Course Grader, UCSC</strong> (Jan 2025 - Mar 2025)</li>
               <li><strong>Social Media Assistant, UCSC</strong> (Nov 2024 - Feb 2025)</li>

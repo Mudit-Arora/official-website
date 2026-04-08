@@ -71,7 +71,7 @@ function App() {
         {/* Left Section - Image */}
         <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 mr-6 mb-6 md:mb-0 rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600">
           <img
-            src="./images/profile-pic.jpeg"
+            src="./images/pfp.jpeg"
             alt="mudit-arora's profile"
             className="w-full h-full object-cover"
           />
@@ -158,7 +158,7 @@ function App() {
             </h3>
             <ul className="text-sm list-disc pl-5 space-y-2">
               <li>
-                <strong>AI Engineer, EzMedTech AI</strong> (Feb 2026 - Present)
+                <strong>AI Engineer, EzMedTech AI</strong> (Feb 2026 - March 2026)
               </li>
               <li>
                 <strong>Deep Learning Researcher, Uniphore</strong> (May 2025 -

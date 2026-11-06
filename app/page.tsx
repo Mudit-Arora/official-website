@@ -1,8 +1,9 @@
 import { About } from "@/components/about";
 import { Hero } from "@/components/hero";
+import { Photos } from "@/components/photos";
 import { Projects } from "@/components/projects";
-import { RevealObserver } from "@/components/reveal-observer";
 import { Tagline } from "@/components/tagline";
+import { Writing } from "@/components/writing";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <About />
       <Projects />
       <Tagline />
-      <RevealObserver />
+      <Photos />
+      <Writing />
     </main>
   );
 }

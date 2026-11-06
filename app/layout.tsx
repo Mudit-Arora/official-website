@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
+import { RevealObserver } from "@/components/reveal-observer";
 import "./globals.css";
 
 const instrumentSerif = localFont({
@@ -53,6 +55,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <Nav />
         {children}
+        <Footer />
+        <RevealObserver />
       </body>
     </html>
   );

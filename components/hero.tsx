@@ -25,7 +25,7 @@ export function Hero() {
         </div>
         <div>
           <Scene />
-          <p className="caption-5 mt-4 text-center text-dim">
+          <p className="caption-5 mt-4 text-center text-balance text-dim">
             <b className="font-medium text-muted">drag</b> to look around &nbsp; <b className="font-medium text-muted">hover</b>{" "}
             anything &nbsp; <b className="font-medium text-muted">click</b> to go there
           </p>

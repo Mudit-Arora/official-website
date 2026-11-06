@@ -10,14 +10,18 @@ export const metadata: Metadata = {
 
 export default function PhotosPage() {
   return (
-    <main className="wrap overflow-x-clip pt-40 pb-24 max-[900px]:pt-32">
-      <div className="load-rise">
-        <SectionHeading page index="03" aside={`${albums.length} albums`}>
-          Photos
-        </SectionHeading>
-      </div>
-      <div className="load-fade [animation-delay:120ms]">
-        <PhotoAlbums albums={albums} />
+    // Clip sideways at the viewport, not the content column, so open albums at the ends of a
+    // row can fan out past it.
+    <main className="overflow-x-clip pt-40 pb-24 max-[900px]:pt-32">
+      <div className="wrap">
+        <div className="load-rise">
+          <SectionHeading page index="03" aside={`${albums.length} albums`}>
+            Photos
+          </SectionHeading>
+        </div>
+        <div className="load-fade [animation-delay:120ms]">
+          <PhotoAlbums albums={albums} />
+        </div>
       </div>
     </main>
   );

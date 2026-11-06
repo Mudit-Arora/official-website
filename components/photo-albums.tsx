@@ -49,7 +49,7 @@ export function PhotoAlbums({ albums }: { albums: Album[] }) {
   return (
     <div
       ref={root}
-      className="mx-auto flex max-w-[1032px] flex-wrap justify-center gap-x-6 gap-y-16 pt-36 max-[1100px]:max-w-[504px] max-[900px]:gap-x-3 max-[900px]:gap-y-10 max-[900px]:pt-28"
+      className="mx-auto flex max-w-[1032px] flex-wrap justify-center gap-x-6 gap-y-16 pt-36 max-[1240px]:max-w-[504px] max-[900px]:gap-x-3 max-[900px]:gap-y-10 max-[900px]:pt-28"
     >
       {albums.map((album, a) => {
         const isOpen = open === a;

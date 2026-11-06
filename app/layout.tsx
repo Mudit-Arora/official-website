@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Background } from "@/components/background";
+import { ClickSound } from "@/components/click-sound";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import "./globals.css";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body>
         <Background />
+        <ClickSound />
         <a
           href="#content"
           className="caption-4 absolute -left-[999px] top-3 z-20 bg-ink px-3 py-2 text-bg focus:left-3"

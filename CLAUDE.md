@@ -8,7 +8,7 @@ This file carries the decisions made in a design session on 2026-11-05. Read it 
 
 A hybrid of three directions:
 
-- **Hero visual: a photo card** (replaced the isometric desk on 2026-11-05 at Mudit's request; the desk code is in git history, `components/scene.tsx` before that date). `components/photo-card.tsx`: his photo from the old site (`public/img/pfp.webp`, the vineyard shot) in a portrait card that tilts toward the cursor (up to 10°) with a light sheen (Mudit removed the "now at Synhawk" pill). No tilt on touch or with reduced motion. The nav is the only site navigation.
+- **Hero visual: a photo card** (replaced the isometric desk on 2026-11-05 at Mudit's request; the desk code is in git history, `components/scene.tsx` before that date). `components/photo-card.tsx`: his photo from the old site (`public/img/pfp.webp`, the vineyard shot) in a portrait card that tilts toward the cursor (up to 10°) with a light sheen (Mudit removed the "now at Synhawk" pill). No tilt on touch or with reduced motion. The nav is the only site navigation; on phones (≤480px) the name drops out so About, Projects, Photos and Writing always show.
 - **Instrument Serif** for all headings and prose; **Geist Mono** for labels, timestamps, nav, buttons. Two families, nothing else.
 - **Project rows, not cards.** Name, one plain line, award or venue on the right, tilted screenshot preview on hover.
 - Sections, in order: hero, about (prose + one fact), projects. Photos (`/photos`) and Writing (`/writing`) are their own pages. An interactive isometric desk section (three.js, spin/move/toggle) was built and then removed at Mudit's request on 2026-11-06; it is in git history if wanted again.
@@ -44,7 +44,7 @@ Scene palettes for night and day are in the prototype as `THEMES.night` and `THE
 
 ## Headings
 
-- `SectionHeading` (`components/section-label.tsx`): mono index in nav order (01 About, 02 Projects, 03 Photos, 04 Writing), title in the serif with the hero gradient, optional true note on the right ("12 projects", "4 albums"). heading-2 for homepage sections, heading-1 (`page`) for the Photos and Writing pages.
+- `SectionHeading` (`components/section-label.tsx`): mono index in nav order (01 About, 02 Projects, 03 Photos, 04 Writing), title in the serif with the hero gradient, optional true note on the right (e.g. the album count on Photos; Mudit removed "12 projects" on 2026-11-06). heading-2 for homepage sections, heading-1 (`page`) for the Photos and Writing pages.
 
 ## Type and spacing
 
@@ -62,6 +62,10 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
 
 - Background (`components/background.tsx`): a fixed canvas dot grid behind every page. Dots near the mouse glow in `--hi`; at night about 5% of dots twinkle like stars and a shooting star streaks across every 3 to 8 seconds; by day two clouds made of bigger, darker dots drift across. 30fps, paused when hidden, static with reduced motion. Body has no background so the canvas shows.
 
+- Hero banner (`components/hero-field.tsx`, added 2026-11-06 at Mudit's request, after node 14725:10 in his copy of the "Premium AI Backgrounds" Figma file): a full bleed canvas behind the hero, a slow domain warped noise field cut into four bands (deep azure, periwinkle, lime, baby yellow) with a fixed dither grain and stepped edges. It leans azure behind the text and yellow around the photo (left/right on desktop, top/bottom when stacked), shifts away from the cursor, runs at 20fps only while on screen, and is static with reduced motion. A radial scrim in `--bg` sits behind the text and the bottom fades into the page (`.hero-field::after`). This is a deliberate exception to "never gradients on backgrounds"; Mudit chose the full banner over a panel behind the photo card or a coloured dot grid.
+
+- Click sound (`components/click-sound.tsx`, added 2026-11-06 at Mudit's request): Mixkit's "Arcade game jump coin" (free licence, chosen by Mudit after turning down synthesised tick, key and pop sounds), as `public/sounds/click.m4a` (mono AAC, 5KB), played through Web Audio at 35% volume on every press of something clickable, the same set that gets the pointing hand cursor, including Enter or Space on a focused link or button. Nothing plays on clicks on empty space.
+
 - Easing everywhere: `cubic-bezier(.22,1,.36,1)`. Hovers 300ms, layout moves 500ms, never under 200ms. Animate only `transform` and `opacity`.
 - Page load, once: headline lines rise (0 / 80ms), sub and actions follow, the room fades up at 300ms, the lamp "switches on" at 900ms, labels fade in at 1300ms.
 - Sections rise 32px and fade in once on scroll (IntersectionObserver, never an unthrottled scroll listener). No replay.
@@ -74,7 +78,7 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
 - Sentence case everywhere. Plain words. No "revolutionize", "effortless", "world class" and friends.
 - No hyphens inside copy ("runner up", "multi agent", "decoder only"). `text-wrap: balance` on headings, `pretty` on prose, so no single word sits alone on a line.
 - **Never invent facts.** Dates, wins, employers and project claims come from Mudit. Anything unknown is a visible placeholder like `{{photo 3}}`, not a plausible guess. There is no "replies within a day" type line anywhere.
-- No email anywhere on the site (Mudit removed the email CTA from the nav, hero and footer on 2026-11-05; the mockups predate this). Do not add it back unless he asks.
+- Email appears only as an icon in the hero socials (`mailto:muditarora31@gmail.com`, added by Mudit on 2026-11-06). No email button or CTA in the nav, hero text or footer (he removed those on 2026-11-05).
 
 ## Content (all from the old site and Mudit's Instagram, confirmed by him)
 
@@ -93,9 +97,9 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
   Language modelling · a decoder only transformer, from scratch · PyTorch · /NLP_243_Homework_3.pdf · language-model.webp
   Brainrot Roast Bot · roasts you, replies in GIFs · Dumbathon · github.com/Dumb-team-Dumbathon/current-build · brainrot.webp
   Mood Snap · BeReal, for feelings · CalHacks 10 · devpost.com/software/mood-app · moodsnap.webp
-  Plus ParkPal, Photo Share and Socially Unsocial (added 2026-11-05). All twelve now live in `content/projects.ts` with a description, tech list and links (GitHub, website, Devpost, demo video, report) taken from the old site (`legacy/react-site/src/App.js`). Rows show link icons on the right; the cursor following preview card shows the screenshot, description and tech. No GitHub link beside the Projects label (removed by Mudit).
-- Hero shows social icons (GitHub, LinkedIn, X, Instagram, resume) under the roles line, as on the old site (minus email).
-- Photos: no intro line for now (Mudit removed "Mostly places, mostly at night…" on 2026-11-05 and will add something else). Lives on `/photos`: just the album folders (Mudit: "only folders are enough"; no per album grids). Shown as photo albums (folders, after a design by damien for Lovable, added 2026-11-05): albums from `content/photos.ts`: Bay Area, Chicago, Dubai, Phoenix, New York, Hong Kong, Delhi (his list, 2026-11-05; Mumbai removed). Photos lift on hover; click fans them out and the front turns solid; Escape or clicking elsewhere closes. The prototype's strip used **stand-in frames** (`ph/1-5.webp` are not his). Mudit will supply 6 to 8 of his own; `profile-pic.webp` is his. Link: instagram.com/xmuditarorax.
+  Plus ParkPal, Photo Share and Socially Unsocial (added 2026-11-05). All twelve now live in `content/projects.ts` with a description, tech list and links (GitHub, website, Devpost, demo video, report) taken from the old site (`legacy/react-site/src/App.js`). Rows show link icons on the right; the cursor following preview card shows the screenshot, description and tech. On phones (≤900px) there is no card: tapping a row opens the same preview in place under it (one open at a time), and the link icons still go straight to the project. No GitHub link beside the Projects label (removed by Mudit).
+- Hero shows social icons (GitHub, LinkedIn, X, Instagram, email, resume) under the roles line, as on the old site. Email is a `mailto:` link and opens in the same tab; the rest open in a new tab.
+- Photos: no intro line for now (Mudit removed "Mostly places, mostly at night…" on 2026-11-05 and will add something else). Lives on `/photos`: just the album folders (Mudit: "only folders are enough"; no per album grids). Shown as photo albums (folders, after a design by damien for Lovable, added 2026-11-05): albums from `content/photos.ts`: Bay Area, Chicago, Dubai, Phoenix, New York, Hong Kong, Delhi (his list, 2026-11-05; Mumbai removed). Photos lift on hover; click fans them out and the front turns solid; Escape or clicking elsewhere closes. The prototype's strip used **stand-in frames** (`ph/1-5.webp` are not his). Every album is placeholders for now (Mudit removed the Bay Area photo on 2026-11-06 and will add his own; `public/photos/profile-pic.webp` is his and still on disk). Each folder shows only its first three photos; the item count shows them all. `/photos` clips sideways at the viewport, not the content column, and the folders go two per row below 1240px, so the outer photos of an open album are never cut off. Link: instagram.com/xmuditarorax.
 - Writing (`/writing`): nothing published yet. The page shows "Coming soon!" (Mudit's wording) on a blue glyph card (`components/glyph-card.tsx`, after "glyphblue" by sucodeee: drifting mono glyphs on a canvas that clear around the cursor) until `content/posts.ts` has a post; the prototype's placeholder draft titles were removed.
 
 ## Skills installed for this project (`npx skills add …`)

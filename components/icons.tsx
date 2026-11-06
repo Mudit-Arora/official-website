@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { LuFileText, LuGlobe, LuPlay } from "react-icons/lu";
+import { LuFileText, LuGlobe, LuMail, LuPlay } from "react-icons/lu";
 import { SiDevpost, SiGithub, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
 import type { LinkKind } from "@/content/projects";
 
@@ -16,5 +16,6 @@ export const SOCIAL_ICONS = {
   linkedin: SiLinkedin,
   x: SiX,
   instagram: SiInstagram,
+  email: LuMail,
   resume: LuFileText,
 };

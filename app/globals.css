@@ -236,6 +236,24 @@
     animation: wave 1.8s ease-in-out 0.6s;
   }
 
+  /* The hero banner (see HeroField): a scrim behind the text column so the heading reads,
+     and a fade at the bottom into the page. */
+  .hero-field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, transparent 55%, var(--bg)),
+      radial-gradient(ellipse 50% 40% at 28% 52%, color-mix(in srgb, var(--bg) 82%, transparent), transparent);
+  }
+  @media (max-width: 900px) {
+    .hero-field::after {
+      background:
+        linear-gradient(to bottom, transparent 70%, var(--bg)),
+        radial-gradient(ellipse 110% 30% at 35% 23%, color-mix(in srgb, var(--bg) 90%, transparent) 40%, transparent);
+    }
+  }
+
   /* Sections rise 32px and fade in once on scroll (see Reveal). */
   .reveal {
     opacity: 0;

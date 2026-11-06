@@ -5,14 +5,7 @@ export type Photo = { src?: string; alt: string };
 export type Album = { name: string; photos: Photo[] };
 
 export const albums: Album[] = [
-  {
-    name: "Bay Area",
-    photos: [
-      { alt: "{{Bay Area 1}}" },
-      { alt: "{{Bay Area 2}}" },
-      { src: "/photos/profile-pic.webp", alt: "Mudit at the San Francisco waterfront" },
-    ],
-  },
+  { name: "Bay Area", photos: [{ alt: "{{Bay Area 1}}" }, { alt: "{{Bay Area 2}}" }, { alt: "{{Bay Area 3}}" }] },
   { name: "Chicago", photos: [{ alt: "{{Chicago 1}}" }, { alt: "{{Chicago 2}}" }, { alt: "{{Chicago 3}}" }] },
   { name: "Dubai", photos: [{ alt: "{{Dubai 1}}" }, { alt: "{{Dubai 2}}" }, { alt: "{{Dubai 3}}" }] },
   { name: "Phoenix", photos: [{ alt: "{{Phoenix 1}}" }, { alt: "{{Phoenix 2}}" }, { alt: "{{Phoenix 3}}" }] },

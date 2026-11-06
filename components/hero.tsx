@@ -1,5 +1,6 @@
 import { LINKS } from "@/content/site";
 import { Greeting } from "./greeting";
+import { HeroField } from "./hero-field";
 import { SOCIAL_ICONS } from "./icons";
 import { PhotoCard } from "./photo-card";
 
@@ -8,12 +9,14 @@ const socials = [
   { href: LINKS.linkedin, label: "LinkedIn", icon: SOCIAL_ICONS.linkedin },
   { href: LINKS.x, label: "X", icon: SOCIAL_ICONS.x },
   { href: LINKS.instagram, label: "Instagram", icon: SOCIAL_ICONS.instagram },
+  { href: LINKS.email, label: "Email", icon: SOCIAL_ICONS.email },
   { href: LINKS.resume, label: "Resume", icon: SOCIAL_ICONS.resume },
 ];
 
 export function Hero() {
   return (
-    <header>
+    <header className="relative isolate">
+      <HeroField />
       <div className="wrap grid min-h-screen grid-cols-[1fr_440px] items-center gap-12 pt-20 pb-10 max-[900px]:min-h-0 max-[900px]:grid-cols-1 max-[900px]:gap-8 max-[900px]:pt-24">
         {/* A container, so the roles line can stack whenever it does not fit on one line. */}
         <div className="@container">
@@ -30,8 +33,7 @@ export function Hero() {
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                 aria-label={label}
                 title={label}
                 className="text-muted transition-[color,translate] duration-300 ease-curve hover:-translate-y-px hover:text-ink"

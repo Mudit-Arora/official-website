@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type FocusEvent, type PointerEvent } from "react";
+import { useEffect, useRef, useState, type FocusEvent, type MouseEvent, type PointerEvent } from "react";
 import type { Project } from "@/content/projects";
 import { LINK_ICONS } from "./icons";
 
@@ -9,12 +9,15 @@ import { LINK_ICONS } from "./icons";
 const W = 320;
 const GAP = 24;
 const EDGE = 16;
+// Below this width there is no floating card; tapping a row opens its preview in place.
+const STACKED = "(max-width: 900px)";
 
 const external = (href: string) => (href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 
 export function ProjectRows({ projects }: { projects: Project[] }) {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState<number | null>(null);
   const box = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: 0, y: 0 });
   const target = useRef({ x: 0, y: 0 });
@@ -71,6 +74,12 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
     show(i);
   }
 
+  function onTap(i: number, e: MouseEvent<HTMLAnchorElement>) {
+    if (!matchMedia(STACKED).matches) return;
+    e.preventDefault();
+    setOpen((o) => (o === i ? null : i));
+  }
+
   const p = projects[current];
 
   return (
@@ -88,6 +97,9 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
               href={proj.links[0].href}
               {...external(proj.links[0].href)}
               onFocus={(e) => onFocus(i, e)}
+              onClick={(e) => onTap(i, e)}
+              aria-expanded={open === i}
+              aria-controls={`preview-${i}`}
               className="heading-5 transition-colors duration-300 ease-curve after:absolute after:inset-0 group-hover:text-accent focus-visible:text-accent"
             >
               {proj.name}
@@ -116,6 +128,21 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
               })}
             </span>
           </span>
+          {/* Phones: the preview opens in place under the row. */}
+          <div
+            id={`preview-${i}`}
+            className={`grid transition-[grid-template-rows,opacity] duration-500 ease-curve min-[901px]:hidden ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+          >
+            <div className="overflow-hidden">
+              <div className="pt-2 pb-1">
+                <div className="relative aspect-16/10 overflow-hidden rounded-lg border border-line">
+                  <Image src={proj.image} alt="" fill sizes="(max-width: 900px) 100vw, 1px" className="object-cover object-top" />
+                </div>
+                <p className="body-3 mt-3 text-text">{proj.description}</p>
+                <p className="caption-5 mt-2 text-muted">{proj.tech.join(" · ")}</p>
+              </div>
+            </div>
+          </div>
         </div>
       ))}
 

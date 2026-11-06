@@ -194,6 +194,27 @@
     transform: none;
   }
 }
+/* The hand waves from the wrist. */
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
 @keyframes lamp {
   60% {
     transform: scale(1.15);
@@ -215,6 +236,12 @@
   .load-scene {
     opacity: 0;
     animation: rise 0.8s var(--curve) 0.3s forwards;
+  }
+  /* Waves once after the greeting rises; Greeting replays it on hover. */
+  .wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave 1.8s ease-in-out 0.6s;
   }
   .scene-glow {
     transform-origin: center;
@@ -249,6 +276,7 @@
   .load-rise,
   .load-fade,
   .load-scene,
+  .wave,
   .scene-glow,
   .scene-labels {
     animation: none;

@@ -12,8 +12,12 @@ export function About() {
         <div className="heading-4 max-w-[820px] space-y-6">
           <p>
             Most of what I do is voice: agents that listen, understand and talk back, and the NLP and language
-            model work underneath them. Lately at EzMedTech AI, Uniphore and CRED; before that, machine learning
-            at Mayo Clinic.
+            model work underneath them. Right now I am a member of technical staff at{" "}
+            <a className={link} href={LINKS.synhawk}>
+              Synhawk
+            </a>
+            , where we build models that tell real voices and video from fakes. Before that, EzMedTech AI, Uniphore
+            and CRED, and machine learning at Mayo Clinic.
           </p>
           <p>
             Off the clock I take photos of cities at night, play too many games, and rewatch sitcoms I already know

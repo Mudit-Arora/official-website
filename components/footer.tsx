@@ -1,5 +1,4 @@
-import { EMAIL, LINKS } from "@/content/site";
-import { EmailButton } from "./email-button";
+import { LINKS } from "@/content/site";
 
 const meta = [
   { href: LINKS.github, label: "GitHub" },
@@ -17,10 +16,6 @@ export function Footer() {
         <p className="heading-2 max-w-[680px] text-balance">
           Working on something with voice in it? I would like to hear about it.
         </p>
-        <div className="mt-8 flex items-center gap-6 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4">
-          <EmailButton />
-          <span className="caption-5 text-dim">{EMAIL}</span>
-        </div>
         <div className="caption-5 mt-16 flex flex-wrap justify-between gap-3 border-t border-line pt-6 text-muted">
           <span>Bay Area, California</span>
           <span className="flex flex-wrap gap-4">

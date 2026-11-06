@@ -20,12 +20,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mudit Arora, AI engineer working on voice",
+  title: "Mudit Arora, member of technical staff at Synhawk",
   description:
-    "Mudit Arora builds voice agents and the language models underneath them. Projects, photos and writing from the Bay Area.",
+    "Mudit Arora is a member of technical staff at Synhawk. Projects, photos and writing from the Bay Area.",
   openGraph: {
     title: "Mudit Arora",
-    description: "AI engineer working on voice. Projects, photos and writing.",
+    description: "Member of technical staff at Synhawk. Projects, photos and writing.",
   },
 };
 

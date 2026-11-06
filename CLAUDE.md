@@ -1,6 +1,6 @@
 # muditarora.vercel.app — rebuild
 
-Personal site for Mudit Arora, AI engineer in the Bay Area working on voice. The goal of the rebuild: **an about-me site, not a résumé.** The previous site (Create React App, now in `legacy/react-site/`) is being replaced entirely.
+Personal site for Mudit Arora, member of technical staff at Synhawk (synhawk.com: models that detect cloned voices and deepfake video), in the Bay Area, working on voice. The goal of the rebuild: **an about-me site, not a résumé.** The previous site (Create React App, now in `legacy/react-site/`) is being replaced entirely.
 
 This file carries the decisions made in a design session on 2026-11-05. Read it fully before touching code, then open `design/prototype/index.html` in a browser: that file *is* the approved design. Port it; do not redesign it.
 
@@ -11,7 +11,7 @@ A hybrid of three directions:
 - **The desk.** The hero is an isometric room (drawn live in SVG, from boxes) of Mudit's desk. Objects are hotspots: monitor → projects, books → writing, camera → photos, phone → voice, gamepad → games, window → the Bay, diploma → education. Hover lights the object and its label; click scrolls to the section. Mouse movement tilts the room a few degrees; dragging tilts it further and it springs back on release.
 - **Instrument Serif** for all headings and prose; **Geist Mono** for labels, timestamps, nav, buttons. Two families, nothing else.
 - **Project rows, not cards.** Name, one plain line, award or venue on the right, tilted screenshot preview on hover.
-- Sections, in order: hero, about (prose + three facts), projects, tagline reveal, photos, writing, footer with the one CTA.
+- Sections, in order: hero, about (prose + three facts), projects, tagline reveal, photos, writing, footer.
 - **Two themes that change the time of day.** Night: lamp on, moon, screen light spill, copy says "my desk at 2am". Day: sun in the window, light walls, lamp off, "my desk at 2pm". Sun/moon toggle in the nav; follows system preference by default; remembers a manual choice in localStorage; no flash on load.
 
 Reference screenshots: `design/mockups/` (`themes-side-by-side.png`, `light-full-page.png`, `dark-full-page.png`, `themes-mobile.png`, `interaction.gif` shows the load sequence, hover, drag and the tagline reveal).
@@ -66,15 +66,15 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
 - Sentence case everywhere. Plain words. No "revolutionize", "effortless", "world class" and friends.
 - No hyphens inside copy ("runner up", "multi agent", "decoder only"). `text-wrap: balance` on headings, `pretty` on prose, so no single word sits alone on a line.
 - **Never invent facts.** Dates, wins, employers and project claims come from Mudit. Anything unknown is a visible placeholder like `{{photo 3}}`, not a plausible guess. There is no "replies within a day" type line anywhere.
-- One primary action on the whole site: email `muditarora31@gmail.com`. It appears in the nav pill, the hero and the footer, and nowhere else.
+- No email anywhere on the site (Mudit removed the email CTA from the nav, hero and footer on 2026-11-05; the mockups predate this). Do not add it back unless he asks.
 
 ## Content (all from the old site and Mudit's Instagram, confirmed by him)
 
-- Headline: "I build voice agents. The rest of the time, I am here." Sub: "AI engineer in the Bay Area, working on agents that listen and talk back. This is my desk at 2am, more or less." (2pm in day mode)
-- Proof line beside the CTA: "Winner, CruzHacks 2025 and runner up at the smallest.ai hackathon"
+- Headline (h1): "Sup, I'm Mudit 👋". The old headline "I build voice agents. The rest of the time, I am here." was removed by Mudit on 2026-11-05: he is not only into voice AI, so do not frame the site as voice only. Sub: "Member of technical staff at Synhawk, where we tell real voices from fake ones. This is my desk at 2am, more or less." (2pm in day mode). The hand waves on load and hover. Below the sub: "Full Time Developer | Part Time Gamer | All Time Learner" (his wording and casing).
+- No proof line in the hero (removed by Mudit on 2026-11-05). The wins still appear in the About facts.
 - About, two paragraphs, as in the prototype. "sf ~ phx ~ del" is from his Instagram bio (places lived, in order).
 - Facts: MS in AI, UC Santa Cruz; BS in CS, Arizona State. Wins as above. Links: GitHub `Mudit-Arora`, LinkedIn `aroramudit`, X `xxmuditaroraxx`, Instagram `xmuditarorax`, resume PDF at `/MuditAroraResume.pdf`.
-- Work history lives in the About sentence only ("Lately at EzMedTech AI, Uniphore and CRED; before that, machine learning at Mayo Clinic") and in the resume. No work section, no skills section.
+- Current role (from Mudit, 2026-11-05): member of technical staff at Synhawk. Synhawk's description comes from synhawk.com; his specific work there is not confirmed, so do not describe it beyond the company's own words. Work history lives in the About paragraph only ("Right now … Synhawk … Before that, EzMedTech AI, Uniphore and CRED, and machine learning at Mayo Clinic") and in the resume. No work section, no skills section.
 - Projects (name · line · right label · link · image in `design/prototype/img/`):
   Blindspot · describes the world to blind users, from an iPhone · runner up, smallest.ai · github.com/Mudit-Arora/Blindspot · blindspot.webp
   SlugMeditate · a thought, turned into a VR world · winner, CruzHacks 2025 · slugmeditate.tech · slugmeditate.webp

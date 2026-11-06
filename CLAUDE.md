@@ -20,7 +20,7 @@ Reference screenshots: `design/mockups/` (`themes-side-by-side.png`, `light-full
 
 - Next.js (App Router, TypeScript), Tailwind v4, deployed on Vercel. The app lives at the repo root.
 - `legacy/` holds the old sites (`coming-soon/`, `react-site/`). Keep them in the repo, never deploy or delete them. Exclude `legacy/` from `tsconfig.json`, ESLint, and Tailwind source detection (`@source not "../legacy";` or equivalent).
-- Fonts via `next/font/local` from `design/prototype/fonts/` (do not use Google Fonts).
+- Fonts via `next/font/local` from `app/fonts/` (copied from `design/prototype/fonts/`; do not use Google Fonts).
 - Writing as MDX pages under `app/writing/<slug>/`; a new post is a new file.
 - Photos in `public/photos/`, listed in one data file.
 - Scene: one client component that ports the vanilla JS in the prototype (box projection, hover, click, tilt, day/night palettes). Motion (Framer Motion) is fine for the tilt spring; plain CSS is fine for everything else.

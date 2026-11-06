@@ -17,3 +17,9 @@ next-env.d.ts
 # os / editor
 .DS_Store
 *.log
+
+# misc
+*.pem
+
+# local browser screenshots
+.playwright-mcp/

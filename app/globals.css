@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* Old sites and the design prototype are reference only. */
+@source not "../legacy";
+@source not "../design";
+
+/* Night is the default; the inline script in layout.tsx sets data-theme before paint. */
+:root {
+  /* night: Midnight Black #010511, Deep Azure #0046DE, Baby Yellow #FEED65 */
+  --bg: #010511;
+  --surface: #0a1020;
+  --surface-2: #111833;
+  --line: #1b2238;
+  --ink: #f2f1ec;
+  --text: #c5c8d3;
+  --muted: #8a90a3;
+  --dim: #5b6176;
+  --accent: #0046de;
+  --accent-ink: #ffffff;
+  --hi: #feed65;
+  --hi-ink: #010511;
+  --h1a: #ffffff;
+  --h1b: #9b9b9b;
+  --nav: rgba(10, 16, 32, 0.72);
+  --wrap: 1200px;
+  --pad: 40px;
+  --curve: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  /* day: the same azure and yellow on an azure tinted white */
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #e9edf7;
+  --line: #dce1ee;
+  --ink: #010511;
+  --text: #2b3047;
+  --muted: #5e6478;
+  --dim: #9aa0b4;
+  --accent: #0046de;
+  --accent-ink: #ffffff;
+  --hi: #0046de;
+  --hi-ink: #ffffff;
+  --h1a: #010511;
+  --h1b: #6b7088;
+  --nav: rgba(255, 255, 255, 0.72);
+  color-scheme: light;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --pad: 20px;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-hi: var(--hi);
+  --color-hi-ink: var(--hi-ink);
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --ease-curve: var(--curve);
+}
+
+/* Text styles, sizes on the Tailwind scale. Instrument Serif has one weight. */
+@utility heading-1 {
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  @media (max-width: 900px) {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+@utility heading-2 {
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  @media (max-width: 900px) {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+@utility heading-4 {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  @media (max-width: 900px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@utility heading-5 {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+@utility title-1 {
+  font-size: 20px;
+  line-height: 28px;
+}
+@utility title-2 {
+  font-size: 18px;
+  line-height: 28px;
+}
+@utility body-3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+@utility caption-4 {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+@utility caption-5 {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 16px;
+}
+@utility button-sm {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+@utility wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    transition:
+      background 0.5s var(--curve),
+      color 0.5s var(--curve);
+  }
+  body {
+    background: var(--bg);
+    font-family: var(--font-instrument-serif), Georgia, serif;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  ::selection {
+    background: var(--hi);
+    color: var(--hi-ink);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}

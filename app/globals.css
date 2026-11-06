@@ -4,6 +4,9 @@
 @source not "../legacy";
 @source not "../design";
 
+/* day: and its children, for the few things that differ by time of day. */
+@custom-variant day (&:where([data-theme="light"], [data-theme="light"] *));
+
 /* Night is the default; the inline script in layout.tsx sets data-theme before paint. */
 :root {
   /* night: Midnight Black #010511, Deep Azure #0046DE, Baby Yellow #FEED65 */
@@ -181,5 +184,62 @@
   }
   p {
     text-wrap: pretty;
+  }
+}
+
+/* Page load, once: headline lines rise, then sub and actions, the room, the lamp, the labels. */
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes lamp {
+  60% {
+    transform: scale(1.15);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@layer components {
+  .load-rise {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: rise 0.5s var(--curve) forwards;
+  }
+  .load-fade {
+    opacity: 0;
+    animation: rise 0.5s var(--curve) forwards;
+  }
+  .load-scene {
+    opacity: 0;
+    animation: rise 0.8s var(--curve) 0.3s forwards;
+  }
+  .scene-glow {
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: scale(0);
+    mix-blend-mode: screen;
+    animation: lamp 0.8s var(--curve) 0.9s forwards;
+  }
+  .scene-labels {
+    opacity: 0;
+    animation: rise 0.5s var(--curve) 1.3s forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .load-rise,
+  .load-fade,
+  .load-scene,
+  .scene-glow,
+  .scene-labels {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

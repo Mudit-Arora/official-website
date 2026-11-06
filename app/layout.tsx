@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Nav } from "@/components/nav";
 import "./globals.css";
 
 const instrumentSerif = localFont({
@@ -40,7 +41,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <a
+          href="#main"
+          className="caption-4 absolute -left-[999px] top-3 z-20 bg-ink px-3 py-2 text-bg focus:left-3"
+        >
+          Skip to content
+        </a>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

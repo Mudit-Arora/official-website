@@ -1,12 +1,22 @@
-// Photos for the folder in the photos section, in order; the first five are shown and the
-// first one sits in the middle of the fan. Files live in public/photos/.
-// An entry without src is a placeholder until Mudit sends his own.
+// Photo albums for the photos section, shown as folders. Album names are places Mudit
+// has lived or been (his list). Files live in public/photos/; an entry without src is a
+// placeholder until Mudit sends his own. Each album shows its first three photos.
 export type Photo = { src?: string; alt: string };
+export type Album = { name: string; photos: Photo[] };
 
-export const photos: Photo[] = [
-  { src: "/photos/profile-pic.webp", alt: "Mudit at the San Francisco waterfront" },
-  { alt: "{{photo 2}}" },
-  { alt: "{{photo 3}}" },
-  { alt: "{{photo 4}}" },
-  { alt: "{{photo 5}}" },
+export const albums: Album[] = [
+  {
+    name: "Bay Area",
+    photos: [
+      { alt: "{{Bay Area 1}}" },
+      { alt: "{{Bay Area 2}}" },
+      { src: "/photos/profile-pic.webp", alt: "Mudit at the San Francisco waterfront" },
+    ],
+  },
+  { name: "Chicago", photos: [{ alt: "{{Chicago 1}}" }, { alt: "{{Chicago 2}}" }, { alt: "{{Chicago 3}}" }] },
+  { name: "Dubai", photos: [{ alt: "{{Dubai 1}}" }, { alt: "{{Dubai 2}}" }, { alt: "{{Dubai 3}}" }] },
+  { name: "Phoenix", photos: [{ alt: "{{Phoenix 1}}" }, { alt: "{{Phoenix 2}}" }, { alt: "{{Phoenix 3}}" }] },
+  { name: "New York", photos: [{ alt: "{{New York 1}}" }, { alt: "{{New York 2}}" }, { alt: "{{New York 3}}" }] },
+  { name: "Hong Kong", photos: [{ alt: "{{Hong Kong 1}}" }, { alt: "{{Hong Kong 2}}" }, { alt: "{{Hong Kong 3}}" }] },
+  { name: "Delhi", photos: [{ alt: "{{Delhi 1}}" }, { alt: "{{Delhi 2}}" }, { alt: "{{Delhi 3}}" }] },
 ];

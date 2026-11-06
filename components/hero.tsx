@@ -1,7 +1,7 @@
 import { LINKS } from "@/content/site";
 import { Greeting } from "./greeting";
 import { SOCIAL_ICONS } from "./icons";
-import { Scene } from "./scene";
+import { PhotoCard } from "./photo-card";
 
 const socials = [
   { href: LINKS.github, label: "GitHub", icon: SOCIAL_ICONS.github },
@@ -14,7 +14,7 @@ const socials = [
 export function Hero() {
   return (
     <header>
-      <div className="wrap grid min-h-screen grid-cols-[1fr_560px] items-center gap-12 pt-20 pb-10 max-[900px]:min-h-0 max-[900px]:grid-cols-1 max-[900px]:gap-8 max-[900px]:pt-24">
+      <div className="wrap grid min-h-screen grid-cols-[1fr_440px] items-center gap-12 pt-20 pb-10 max-[900px]:min-h-0 max-[900px]:grid-cols-1 max-[900px]:gap-8 max-[900px]:pt-24">
         {/* A container, so the roles line can stack whenever it does not fit on one line. */}
         <div className="@container">
           <Greeting />
@@ -41,13 +41,7 @@ export function Hero() {
             ))}
           </div>
         </div>
-        <div>
-          <Scene />
-          <p className="caption-5 mt-4 text-center text-balance text-dim">
-            <b className="font-medium text-muted">drag</b> to look around &nbsp; <b className="font-medium text-muted">hover</b>{" "}
-            anything &nbsp; <b className="font-medium text-muted">click</b> to go there
-          </p>
-        </div>
+        <PhotoCard />
       </div>
     </header>
   );

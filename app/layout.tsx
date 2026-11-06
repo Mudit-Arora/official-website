@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Background } from "@/components/background";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
-import { RevealObserver } from "@/components/reveal-observer";
 import "./globals.css";
 
 const instrumentSerif = localFont({
@@ -37,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-theme="dark"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${instrumentSerif.variable} ${geistMono.variable}`}
     >
@@ -47,16 +48,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
       </head>
       <body>
+        <Background />
         <a
-          href="#main"
+          href="#content"
           className="caption-4 absolute -left-[999px] top-3 z-20 bg-ink px-3 py-2 text-bg focus:left-3"
         >
           Skip to content
         </a>
         <Nav />
-        {children}
+        {/* Skip link target; pages kept mounted by the router stay inside it. */}
+        <div id="content" tabIndex={-1} className="outline-none">
+          {children}
+        </div>
         <Footer />
-        <RevealObserver />
       </body>
     </html>
   );

@@ -8,10 +8,10 @@ This file carries the decisions made in a design session on 2026-11-05. Read it 
 
 A hybrid of three directions:
 
-- **The desk.** The hero is an isometric room (drawn live in SVG, from boxes) of Mudit's desk. Objects are hotspots: monitor → projects, books → writing, camera → photos, phone → voice, gamepad → games, window → the Bay, diploma → education. Hover lights the object and its label; click scrolls to the section. Mouse movement tilts the room a few degrees; dragging tilts it further and it springs back on release.
+- **Hero visual: a photo card** (replaced the isometric desk on 2026-11-05 at Mudit's request; the desk code is in git history, `components/scene.tsx` before that date). `components/photo-card.tsx`: his photo from the old site (`public/img/pfp.webp`, the vineyard shot) in a portrait card that tilts toward the cursor (up to 10°) with a light sheen (Mudit removed the "now at Synhawk" pill). No tilt on touch or with reduced motion. The nav is the only site navigation.
 - **Instrument Serif** for all headings and prose; **Geist Mono** for labels, timestamps, nav, buttons. Two families, nothing else.
 - **Project rows, not cards.** Name, one plain line, award or venue on the right, tilted screenshot preview on hover.
-- Sections, in order: hero, about (prose + one fact), projects, photos, writing, footer (links row only). The tagline section and the footer line were removed by Mudit on 2026-11-05.
+- Sections, in order: hero, about (prose + one fact), projects. Photos (`/photos`) and Writing (`/writing`) are their own pages. An interactive isometric desk section (three.js, spin/move/toggle) was built and then removed at Mudit's request on 2026-11-06; it is in git history if wanted again.
 - **Two themes that change the time of day.** Night: lamp on, moon, screen light spill, copy says "my desk at 2am". Day: sun in the window, light walls, lamp off, "my desk at 2pm". Sun/moon toggle in the nav; follows system preference by default; remembers a manual choice in localStorage; no flash on load.
 
 Reference screenshots: `design/mockups/` (`themes-side-by-side.png`, `light-full-page.png`, `dark-full-page.png`, `themes-mobile.png`, `interaction.gif` shows the load sequence, hover, drag and the tagline reveal).
@@ -42,6 +42,10 @@ Day
 
 Scene palettes for night and day are in the prototype as `THEMES.night` and `THEMES.day`.
 
+## Headings
+
+- `SectionHeading` (`components/section-label.tsx`): mono index in nav order (01 About, 02 Projects, 03 Photos, 04 Writing), title in the serif with the hero gradient, optional true note on the right ("12 projects", "4 albums"). heading-2 for homepage sections, heading-1 (`page`) for the Photos and Writing pages.
+
 ## Type and spacing
 
 Named text styles, sizes on the Tailwind scale (from the `landing-page-design` skill). Instrument Serif has one weight, so weight rules do not apply.
@@ -53,6 +57,10 @@ Named text styles, sizes on the Tailwind scale (from the `landing-page-design` s
 Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only Tailwind values (8px on buttons and previews, 9999 on pills). Content width 1200px, 40px side padding (20px on mobile); lists capped at 820px; hero heading and sub capped at 680px.
 
 ## Motion
+
+- Cursor: a themed system cursor via CSS (`public/cursors/`): a rounded arrow in `--hi` colours (yellow with a dark edge at night, azure with a white edge by day) and a matching pointing hand over links, buttons, project rows and album folders. Mudit chose this over a dot or a trailing ring: no lag, no JavaScript.
+
+- Background (`components/background.tsx`): a fixed canvas dot grid behind every page. Dots near the mouse glow in `--hi`; at night about 5% of dots twinkle like stars and a shooting star streaks across every 3 to 8 seconds; by day two clouds made of bigger, darker dots drift across. 30fps, paused when hidden, static with reduced motion. Body has no background so the canvas shows.
 
 - Easing everywhere: `cubic-bezier(.22,1,.36,1)`. Hovers 300ms, layout moves 500ms, never under 200ms. Animate only `transform` and `opacity`.
 - Page load, once: headline lines rise (0 / 80ms), sub and actions follow, the room fades up at 300ms, the lamp "switches on" at 900ms, labels fade in at 1300ms.
@@ -72,8 +80,8 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
 
 - Headline (h1): "Sup, I'm Mudit 👋". The old headline "I build voice agents. The rest of the time, I am here." was removed by Mudit on 2026-11-05: he is not only into voice AI, so do not frame the site as voice only. No sub line (removed by Mudit on 2026-11-05; Synhawk is mentioned in About instead). The hand waves on load and hover. Below the sub: "Full Time Developer | Part Time Gamer | All Time Learner" (his wording and casing).
 - No proof line in the hero (removed by Mudit on 2026-11-05). Wins appear only as project labels.
-- About: one short paragraph (shortened at Mudit's request on 2026-11-05): "Now at Synhawk; before that, EzMedTech AI, Uniphore, CRED and Mayo Clinic. Off the clock: night photos, too many games, sitcoms on repeat." (Mudit removed "sf ~ phx ~ del".)
-- Facts under About: only "Studied" (MS in AI, UC Santa Cruz; BS in CS, Arizona State). Mudit removed "Won" and "Elsewhere" on 2026-11-05. Links: GitHub `Mudit-Arora`, LinkedIn `aroramudit`, X `xxmuditaroraxx`, Instagram `xmuditarorax`, resume PDF at `/MuditAroraResume.pdf`.
+- About (rewritten by Mudit, 2026-11-05; copy edited only for grammar): lead line "I'm a member of technical staff at Synhawk, based in the Bay Area, where we build foundation models that detect deepfakes across audio, video and identity." Then past roles with titles (AI engineer EzMedTech AI, deep learning researcher Uniphore, AI software engineering intern CRED, machine learning researcher Mayo Clinic), interests (NLP, LLMs, generative AI), and off the clock (photos, cafes and restaurants, games, sitcoms).
+- Under About: a "Studied" subheading (serif, hero gradient) and two rows styled like the project list: MS in Artificial Intelligence, UC Santa Cruz; BS in Computer Science, Arizona State University. Each row has the school's logo on a white tile (`public/logos/`, public domain from Wikimedia Commons: UCSC seal, ASU monogram cropped from the ASU logo). Mudit removed "Won" and "Elsewhere" on 2026-11-05. Links: GitHub `Mudit-Arora`, LinkedIn `aroramudit`, X `xxmuditaroraxx`, Instagram `xmuditarorax`, resume PDF at `/MuditAroraResume.pdf`.
 - Current role (from Mudit, 2026-11-05): member of technical staff at Synhawk. Synhawk's description comes from synhawk.com; his specific work there is not confirmed, so do not describe it beyond the company's own words. Work history lives in the About paragraph only and in the resume. No work section, no skills section.
 - Projects (name · line · right label · link · image in `design/prototype/img/`):
   Blindspot · describes the world to blind users, from an iPhone · runner up, smallest.ai · github.com/Mudit-Arora/Blindspot · blindspot.webp
@@ -87,8 +95,8 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
   Mood Snap · BeReal, for feelings · CalHacks 10 · devpost.com/software/mood-app · moodsnap.webp
   Plus ParkPal, Photo Share and Socially Unsocial (added 2026-11-05). All twelve now live in `content/projects.ts` with a description, tech list and links (GitHub, website, Devpost, demo video, report) taken from the old site (`legacy/react-site/src/App.js`). Rows show link icons on the right; the cursor following preview card shows the screenshot, description and tech. No GitHub link beside the Projects label (removed by Mudit).
 - Hero shows social icons (GitHub, LinkedIn, X, Instagram, resume) under the roles line, as on the old site (minus email).
-- Photos: no intro line for now (Mudit removed "Mostly places, mostly at night…" on 2026-11-05 and will add something else). Shown as a macOS style folder (added 2026-11-05): five photos rest inside and fan out on hover or focus, open by default on touch screens; the first photo in `content/photos.ts` takes the middle. The prototype's strip used **stand-in frames** (`ph/1-5.webp` are not his). Mudit will supply 6 to 8 of his own; `profile-pic.webp` is his. Link: instagram.com/xmuditarorax.
-- Writing: nothing published yet. The section shows "Coming soon!" (Mudit's wording) until `content/posts.ts` has a post; the prototype's placeholder draft titles were removed.
+- Photos: no intro line for now (Mudit removed "Mostly places, mostly at night…" on 2026-11-05 and will add something else). Lives on `/photos`: just the album folders (Mudit: "only folders are enough"; no per album grids). Shown as photo albums (folders, after a design by damien for Lovable, added 2026-11-05): albums from `content/photos.ts`: Bay Area, Chicago, Dubai, Phoenix, New York, Hong Kong, Delhi (his list, 2026-11-05; Mumbai removed). Photos lift on hover; click fans them out and the front turns solid; Escape or clicking elsewhere closes. The prototype's strip used **stand-in frames** (`ph/1-5.webp` are not his). Mudit will supply 6 to 8 of his own; `profile-pic.webp` is his. Link: instagram.com/xmuditarorax.
+- Writing (`/writing`): nothing published yet. The page shows "Coming soon!" (Mudit's wording) on a blue glyph card (`components/glyph-card.tsx`, after "glyphblue" by sucodeee: drifting mono glyphs on a canvas that clear around the cursor) until `content/posts.ts` has a post; the prototype's placeholder draft titles were removed.
 
 ## Skills installed for this project (`npx skills add …`)
 
@@ -112,5 +120,6 @@ When they conflict, the approved prototype wins, then Mudit's explicit choices (
 
 ## Still open with Mudit
 
+- Where the glyph card goes once posts exist (it only shows while `content/posts.ts` is empty). Suggested: a featured card for the latest post at the top of `/writing`. Decide when the first post is added.
 - His 6 to 8 photos, and the first real post title.
 - Project years/dates if he wants them shown instead of the award labels.

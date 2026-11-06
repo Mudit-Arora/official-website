@@ -4,8 +4,8 @@ import { ThemeToggle } from "./theme-toggle";
 const links = [
   { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
-  { href: "/#photos", label: "Photos" },
-  { href: "/#writing", label: "Writing" },
+  { href: "/photos", label: "Photos" },
+  { href: "/writing", label: "Writing" },
 ];
 
 const link = "whitespace-nowrap py-1 transition-colors duration-300 ease-curve hover:text-ink";
@@ -20,11 +20,18 @@ export function Nav() {
         Mudit Arora
       </Link>
       <span className="h-4 w-px bg-line max-[900px]:hidden" />
-      {links.map((l) => (
-        <a key={l.href} href={l.href} className={`${link} text-muted max-[900px]:hidden`}>
-          {l.label}
-        </a>
-      ))}
+      {/* Section links are plain anchors; pages use Link. */}
+      {links.map((l) =>
+        l.href.startsWith("/#") ? (
+          <a key={l.href} href={l.href} className={`${link} text-muted max-[900px]:hidden`}>
+            {l.label}
+          </a>
+        ) : (
+          <Link key={l.href} href={l.href} className={`${link} text-muted max-[900px]:hidden`}>
+            {l.label}
+          </Link>
+        ),
+      )}
       <span className="h-4 w-px bg-line" />
       <ThemeToggle />
     </nav>

@@ -157,8 +157,8 @@
       background 0.5s var(--curve),
       color 0.5s var(--curve);
   }
+  /* No body background: html paints the colour and the dot grid canvas sits between them. */
   body {
-    background: var(--bg);
     font-family: var(--font-instrument-serif), Georgia, serif;
     font-size: 18px;
     line-height: 28px;
@@ -187,7 +187,7 @@
   }
 }
 
-/* Page load, once: headline lines rise, then sub and actions, the room, the lamp, the labels. */
+/* Page load, once: the greeting rises, then the roles and icons, then the photo card. */
 @keyframes rise {
   to {
     opacity: 1;
@@ -215,14 +215,6 @@
     transform: rotate(10deg);
   }
 }
-@keyframes lamp {
-  60% {
-    transform: scale(1.15);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 @layer components {
   .load-rise {
     opacity: 0;
@@ -233,7 +225,7 @@
     opacity: 0;
     animation: rise 0.5s var(--curve) forwards;
   }
-  .load-scene {
+  .load-visual {
     opacity: 0;
     animation: rise 0.8s var(--curve) 0.3s forwards;
   }
@@ -243,19 +235,8 @@
     transform-origin: 70% 70%;
     animation: wave 1.8s ease-in-out 0.6s;
   }
-  .scene-glow {
-    transform-origin: center;
-    transform-box: fill-box;
-    transform: scale(0);
-    mix-blend-mode: screen;
-    animation: lamp 0.8s var(--curve) 0.9s forwards;
-  }
-  .scene-labels {
-    opacity: 0;
-    animation: rise 0.5s var(--curve) 1.3s forwards;
-  }
 
-  /* Sections rise 32px and fade in once on scroll (see RevealObserver). */
+  /* Sections rise 32px and fade in once on scroll (see Reveal). */
   .reveal {
     opacity: 0;
     transform: translateY(32px);
@@ -269,45 +250,48 @@
   }
 }
 
-/* Photos folder: photos rest inside and fan out when it is hovered, focused, or on touch screens. */
-:root {
-  --folder-back: #2d6af0;
-  --folder-front: #4b83f5;
-}
-.folder {
+/* Photo albums: photos rest in each folder, lift on hover, and fan out when it is open
+   (see PhotoAlbums). Poses come from inline custom properties. */
+.album {
   --spread: 1;
 }
 @media (max-width: 900px) {
-  .folder {
-    --spread: 0.55;
+  .album {
+    --spread: 0.4;
   }
 }
-.folder-card {
-  transform: translate(calc(var(--cx) * 1px), calc(var(--cy) * 1px)) rotate(calc(var(--cr) * 1deg));
-  transition: transform 0.5s var(--curve);
-  transition-delay: calc(var(--i) * 40ms);
+.album-card {
+  transform: translate(calc(var(--rx) * 1px), calc(var(--ry) * 1px)) rotate(calc(var(--rr) * 1deg));
+  transition: transform 0.55s var(--curve);
+  transition-delay: calc(var(--i) * 35ms);
 }
-.folder-front {
-  transform-origin: bottom;
-  transition: transform 0.5s var(--curve);
-}
-.folder:hover .folder-card,
-.folder:focus-visible .folder-card {
-  transform: translate(calc(var(--x) * var(--spread) * 1px), calc(var(--y) * var(--spread) * 1px))
-    rotate(calc(var(--r) * 1deg)) scale(1.08);
-}
-.folder:hover .folder-front,
-.folder:focus-visible .folder-front {
-  transform: perspective(700px) rotateX(-28deg);
-}
-@media (hover: none) {
-  .folder .folder-card {
-    transform: translate(calc(var(--x) * var(--spread) * 1px), calc(var(--y) * var(--spread) * 1px))
-      rotate(calc(var(--r) * 1deg)) scale(1.08);
+@media (hover: hover) {
+  .album:not([data-open]):hover .album-card {
+    transform: translate(calc(var(--hx) * 1px), calc(var(--hy) * 1px)) rotate(calc(var(--hr) * 1deg));
   }
-  .folder .folder-front {
-    transform: perspective(700px) rotateX(-28deg);
-  }
+}
+.album[data-open] .album-card {
+  z-index: 20;
+  transform: translate(calc(var(--ox) * var(--spread) * 1px), calc(var(--oy) * 1px))
+    rotate(calc(var(--or) * 1deg)) scale(1.12);
+}
+
+/* Cursor: a themed arrow, and a pointing hand over anything clickable (public/cursors/,
+   28px, hotspot at the tip). Real system cursors, so there is no lag; the keyword after
+   each url is the fallback. */
+:root {
+  cursor: url("/cursors/arrow-night.svg") 5 2, auto;
+}
+:root[data-theme="light"] {
+  cursor: url("/cursors/arrow-day.svg") 5 2, auto;
+}
+:is(a, button, [role="button"], [data-row], [data-album], label, summary),
+:is(a, button, [role="button"], [data-row], [data-album], label, summary) * {
+  cursor: url("/cursors/pointer-night.svg") 10 3, pointer;
+}
+[data-theme="light"] :is(a, button, [role="button"], [data-row], [data-album], label, summary),
+[data-theme="light"] :is(a, button, [role="button"], [data-row], [data-album], label, summary) * {
+  cursor: url("/cursors/pointer-day.svg") 10 3, pointer;
 }
 
 /* Theme switch: the default crossfade is replaced by a circular reveal (see ThemeToggle). */
@@ -327,10 +311,8 @@
   }
   .load-rise,
   .load-fade,
-  .load-scene,
-  .wave,
-  .scene-glow,
-  .scene-labels {
+  .load-visual,
+  .wave {
     animation: none;
     opacity: 1;
     transform: none;
@@ -339,8 +321,7 @@
     transform: none;
     transition: opacity 0.5s var(--curve);
   }
-  .folder-card,
-  .folder-front {
+  .album-card {
     transition: none;
   }
 }

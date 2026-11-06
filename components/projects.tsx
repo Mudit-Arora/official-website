@@ -1,14 +1,17 @@
 import { projects } from "@/content/projects";
 import { ProjectRows } from "./project-rows";
-import { SectionLabel } from "./section-label";
+import { Reveal } from "./reveal";
+import { SectionHeading } from "./section-label";
 
 export function Projects() {
   return (
-    <section id="projects" className="reveal pt-24 max-[900px]:pt-20">
+    <Reveal id="projects" className="pt-24 max-[900px]:pt-20">
       <div className="wrap">
-        <SectionLabel>Projects</SectionLabel>
+        <SectionHeading index="02" aside={`${projects.length} projects`}>
+          Projects
+        </SectionHeading>
         <ProjectRows projects={projects} />
       </div>
-    </section>
+    </Reveal>
   );
 }

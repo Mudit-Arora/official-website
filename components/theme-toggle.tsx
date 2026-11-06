@@ -93,7 +93,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={theme === "light" ? "Switch to night" : "Switch to day"}
-      className="grid size-7 cursor-pointer place-items-center rounded-full border border-line text-muted transition-[color,rotate] duration-300 ease-curve hover:rotate-15 hover:text-ink"
+      className="grid size-7 place-items-center rounded-full border border-line text-muted transition-[color,rotate] duration-300 ease-curve hover:rotate-15 hover:text-ink"
     >
       <svg
         className="size-3.5 day:hidden"

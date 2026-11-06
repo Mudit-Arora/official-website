@@ -8,11 +8,3 @@ export function SectionLabel({ children, aside }: { children: ReactNode; aside?:
     </h2>
   );
 }
-
-export function LabelLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a href={href} className="transition-colors duration-300 ease-curve hover:text-ink">
-      {children}
-    </a>
-  );
-}

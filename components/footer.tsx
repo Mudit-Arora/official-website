@@ -13,10 +13,7 @@ export function Footer() {
   return (
     <footer id="contact" className="reveal pt-24 pb-16">
       <div className="wrap">
-        <p className="heading-2 max-w-[680px] text-balance">
-          Working on something with voice in it? I would like to hear about it.
-        </p>
-        <div className="caption-5 mt-16 flex flex-wrap justify-between gap-3 border-t border-line pt-6 text-muted">
+        <div className="caption-5 flex flex-wrap justify-between gap-3 border-t border-line pt-6 text-muted">
           <span>Bay Area, California</span>
           <span className="flex flex-wrap gap-4">
             {meta.map((m) => (

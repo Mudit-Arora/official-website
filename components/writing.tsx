@@ -9,12 +9,15 @@ export function Writing() {
   return (
     <section id="writing" className="reveal pt-24 max-[900px]:pt-20">
       <div className="wrap">
-        <SectionLabel aside={posts.some((p) => p.slug) ? undefined : <span>starting soon</span>}>Writing</SectionLabel>
-        <div className="grid max-w-[820px]">
-          {posts.map((p) => {
-            const content = (
-              <>
-                <span className="caption-5 text-dim">{p.date ?? "draft"}</span>
+        <SectionLabel>Writing</SectionLabel>
+        {posts.length === 0 ? (
+          // Shown until the first post is published.
+          <p className="heading-5 max-w-[820px] border-y border-line py-3 text-muted">Coming soon!</p>
+        ) : (
+          <div className="grid max-w-[820px]">
+            {posts.map((p) => (
+              <Link key={p.slug} href={`/writing/${p.slug}`} className={row}>
+                <span className="caption-5 text-dim">{p.date}</span>
                 <span className="heading-5 transition-colors duration-300 ease-curve group-hover:text-accent">
                   {p.title}
                   {p.tag && (
@@ -23,20 +26,10 @@ export function Writing() {
                     </span>
                   )}
                 </span>
-              </>
-            );
-            // Drafts are listed but not linked, so there are no dead links.
-            return p.slug ? (
-              <Link key={p.title} href={`/writing/${p.slug}`} className={row}>
-                {content}
               </Link>
-            ) : (
-              <div key={p.title} className={row}>
-                {content}
-              </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

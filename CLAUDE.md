@@ -11,7 +11,7 @@ A hybrid of three directions:
 - **The desk.** The hero is an isometric room (drawn live in SVG, from boxes) of Mudit's desk. Objects are hotspots: monitor → projects, books → writing, camera → photos, phone → voice, gamepad → games, window → the Bay, diploma → education. Hover lights the object and its label; click scrolls to the section. Mouse movement tilts the room a few degrees; dragging tilts it further and it springs back on release.
 - **Instrument Serif** for all headings and prose; **Geist Mono** for labels, timestamps, nav, buttons. Two families, nothing else.
 - **Project rows, not cards.** Name, one plain line, award or venue on the right, tilted screenshot preview on hover.
-- Sections, in order: hero, about (prose + three facts), projects, tagline reveal, photos, writing, footer.
+- Sections, in order: hero, about (prose + one fact), projects, photos, writing, footer (links row only). The tagline section and the footer line were removed by Mudit on 2026-11-05.
 - **Two themes that change the time of day.** Night: lamp on, moon, screen light spill, copy says "my desk at 2am". Day: sun in the window, light walls, lamp off, "my desk at 2pm". Sun/moon toggle in the nav; follows system preference by default; remembers a manual choice in localStorage; no flash on load.
 
 Reference screenshots: `design/mockups/` (`themes-side-by-side.png`, `light-full-page.png`, `dark-full-page.png`, `themes-mobile.png`, `interaction.gif` shows the load sequence, hover, drag and the tagline reveal).
@@ -70,11 +70,11 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
 
 ## Content (all from the old site and Mudit's Instagram, confirmed by him)
 
-- Headline (h1): "Sup, I'm Mudit 👋". The old headline "I build voice agents. The rest of the time, I am here." was removed by Mudit on 2026-11-05: he is not only into voice AI, so do not frame the site as voice only. Sub: "Member of technical staff at Synhawk, where we tell real voices from fake ones. This is my desk at 2am, more or less." (2pm in day mode). The hand waves on load and hover. Below the sub: "Full Time Developer | Part Time Gamer | All Time Learner" (his wording and casing).
-- No proof line in the hero (removed by Mudit on 2026-11-05). The wins still appear in the About facts.
-- About, two paragraphs, as in the prototype. "sf ~ phx ~ del" is from his Instagram bio (places lived, in order).
-- Facts: MS in AI, UC Santa Cruz; BS in CS, Arizona State. Wins as above. Links: GitHub `Mudit-Arora`, LinkedIn `aroramudit`, X `xxmuditaroraxx`, Instagram `xmuditarorax`, resume PDF at `/MuditAroraResume.pdf`.
-- Current role (from Mudit, 2026-11-05): member of technical staff at Synhawk. Synhawk's description comes from synhawk.com; his specific work there is not confirmed, so do not describe it beyond the company's own words. Work history lives in the About paragraph only ("Right now … Synhawk … Before that, EzMedTech AI, Uniphore and CRED, and machine learning at Mayo Clinic") and in the resume. No work section, no skills section.
+- Headline (h1): "Sup, I'm Mudit 👋". The old headline "I build voice agents. The rest of the time, I am here." was removed by Mudit on 2026-11-05: he is not only into voice AI, so do not frame the site as voice only. No sub line (removed by Mudit on 2026-11-05; Synhawk is mentioned in About instead). The hand waves on load and hover. Below the sub: "Full Time Developer | Part Time Gamer | All Time Learner" (his wording and casing).
+- No proof line in the hero (removed by Mudit on 2026-11-05). Wins appear only as project labels.
+- About: one short paragraph (shortened at Mudit's request on 2026-11-05): "Now at Synhawk; before that, EzMedTech AI, Uniphore, CRED and Mayo Clinic. Off the clock: night photos, too many games, sitcoms on repeat." (Mudit removed "sf ~ phx ~ del".)
+- Facts under About: only "Studied" (MS in AI, UC Santa Cruz; BS in CS, Arizona State). Mudit removed "Won" and "Elsewhere" on 2026-11-05. Links: GitHub `Mudit-Arora`, LinkedIn `aroramudit`, X `xxmuditaroraxx`, Instagram `xmuditarorax`, resume PDF at `/MuditAroraResume.pdf`.
+- Current role (from Mudit, 2026-11-05): member of technical staff at Synhawk. Synhawk's description comes from synhawk.com; his specific work there is not confirmed, so do not describe it beyond the company's own words. Work history lives in the About paragraph only and in the resume. No work section, no skills section.
 - Projects (name · line · right label · link · image in `design/prototype/img/`):
   Blindspot · describes the world to blind users, from an iPhone · runner up, smallest.ai · github.com/Mudit-Arora/Blindspot · blindspot.webp
   SlugMeditate · a thought, turned into a VR world · winner, CruzHacks 2025 · slugmeditate.tech · slugmeditate.webp
@@ -85,9 +85,10 @@ Spacing only from: 0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96. Radius only T
   Language modelling · a decoder only transformer, from scratch · PyTorch · /NLP_243_Homework_3.pdf · language-model.webp
   Brainrot Roast Bot · roasts you, replies in GIFs · Dumbathon · github.com/Dumb-team-Dumbathon/current-build · brainrot.webp
   Mood Snap · BeReal, for feelings · CalHacks 10 · devpost.com/software/mood-app · moodsnap.webp
-  Also on GitHub, not in the list: ParkPal, Photo Share, Socially Unsocial. "all twelve on GitHub" links to github.com/Mudit-Arora.
-- Photos: "Mostly places, mostly at night. Chicago, Mumbai, Dubai, Portland, and a lot of the Bay." The strip in the prototype uses **stand-in frames** (`ph/1-5.webp` are not his). Mudit will supply 6 to 8 of his own; `profile-pic.webp` is his. Link: instagram.com/xmuditarorax.
-- Writing: nothing published yet. The three draft titles in the prototype are placeholders Mudit will replace. Show drafts with a "draft" tag so the section looks finished before the first post exists.
+  Plus ParkPal, Photo Share and Socially Unsocial (added 2026-11-05). All twelve now live in `content/projects.ts` with a description, tech list and links (GitHub, website, Devpost, demo video, report) taken from the old site (`legacy/react-site/src/App.js`). Rows show link icons on the right; the cursor following preview card shows the screenshot, description and tech. No GitHub link beside the Projects label (removed by Mudit).
+- Hero shows social icons (GitHub, LinkedIn, X, Instagram, resume) under the roles line, as on the old site (minus email).
+- Photos: no intro line for now (Mudit removed "Mostly places, mostly at night…" on 2026-11-05 and will add something else). Shown as a macOS style folder (added 2026-11-05): five photos rest inside and fan out on hover or focus, open by default on touch screens; the first photo in `content/photos.ts` takes the middle. The prototype's strip used **stand-in frames** (`ph/1-5.webp` are not his). Mudit will supply 6 to 8 of his own; `profile-pic.webp` is his. Link: instagram.com/xmuditarorax.
+- Writing: nothing published yet. The section shows "Coming soon!" (Mudit's wording) until `content/posts.ts` has a post; the prototype's placeholder draft titles were removed.
 
 ## Skills installed for this project (`npx skills add …`)
 

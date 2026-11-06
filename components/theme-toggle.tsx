@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useSyncExternalStore, type MouseEvent } from "react";
 
 type Theme = "light" | "dark";
+
+const EASE = "cubic-bezier(.22,1,.36,1)";
 
 function subscribe(onChange: () => void) {
   const observer = new MutationObserver(onChange);
@@ -40,12 +42,49 @@ export function ThemeToggle() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  function toggle() {
+  function toggle(e: MouseEvent<HTMLButtonElement>) {
+    const root = document.documentElement;
     const next = theme === "light" ? "dark" : "light";
-    document.documentElement.dataset.theme = next;
-    try {
-      localStorage.setItem("theme", next);
-    } catch {}
+    const apply = () => {
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem("theme", next);
+      } catch {}
+    };
+
+    // The icon spins into place either way.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      e.currentTarget
+        .querySelector(next === "light" ? ".day\\:block" : ".day\\:hidden")
+        ?.animate(
+          [
+            { transform: "rotate(-90deg) scale(.5)", opacity: 0 },
+            { transform: "none", opacity: 1 },
+          ],
+          { duration: 500, easing: EASE },
+        );
+    }
+
+    // The new theme spreads out from the button as a growing circle. Without view transitions,
+    // or with reduced motion, it falls back to the plain colour fade.
+    if (!document.startViewTransition || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      apply();
+      return;
+    }
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = r.left + r.width / 2;
+    const y = r.top + r.height / 2;
+    const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    // No colour transitions while the snapshot is taken, so the reveal shows the final colours.
+    root.dataset.themeSwitching = "";
+    const transition = document.startViewTransition(apply);
+    transition.ready.then(() => {
+      root.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+        { duration: 600, easing: EASE, pseudoElement: "::view-transition-new(root)" },
+      );
+    });
+    transition.finished.finally(() => delete root.dataset.themeSwitching);
   }
 
   // Both icons are rendered and swapped in CSS, so the right one shows before hydration.

@@ -269,6 +269,58 @@
   }
 }
 
+/* Photos folder: photos rest inside and fan out when it is hovered, focused, or on touch screens. */
+:root {
+  --folder-back: #2d6af0;
+  --folder-front: #4b83f5;
+}
+.folder {
+  --spread: 1;
+}
+@media (max-width: 900px) {
+  .folder {
+    --spread: 0.55;
+  }
+}
+.folder-card {
+  transform: translate(calc(var(--cx) * 1px), calc(var(--cy) * 1px)) rotate(calc(var(--cr) * 1deg));
+  transition: transform 0.5s var(--curve);
+  transition-delay: calc(var(--i) * 40ms);
+}
+.folder-front {
+  transform-origin: bottom;
+  transition: transform 0.5s var(--curve);
+}
+.folder:hover .folder-card,
+.folder:focus-visible .folder-card {
+  transform: translate(calc(var(--x) * var(--spread) * 1px), calc(var(--y) * var(--spread) * 1px))
+    rotate(calc(var(--r) * 1deg)) scale(1.08);
+}
+.folder:hover .folder-front,
+.folder:focus-visible .folder-front {
+  transform: perspective(700px) rotateX(-28deg);
+}
+@media (hover: none) {
+  .folder .folder-card {
+    transform: translate(calc(var(--x) * var(--spread) * 1px), calc(var(--y) * var(--spread) * 1px))
+      rotate(calc(var(--r) * 1deg)) scale(1.08);
+  }
+  .folder .folder-front {
+    transform: perspective(700px) rotateX(-28deg);
+  }
+}
+
+/* Theme switch: the default crossfade is replaced by a circular reveal (see ThemeToggle). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+[data-theme-switching],
+[data-theme-switching] * {
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -286,5 +338,9 @@
   .reveal {
     transform: none;
     transition: opacity 0.5s var(--curve);
+  }
+  .folder-card,
+  .folder-front {
+    transition: none;
   }
 }

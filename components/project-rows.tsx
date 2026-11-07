@@ -11,6 +11,8 @@ const GAP = 24;
 const EDGE = 16;
 // Below this width there is no floating card; tapping a row opens its preview in place.
 const STACKED = "(max-width: 900px)";
+// Rows shown before "Show all"; the rest open in place under them.
+const FIRST = 6;
 
 const external = (href: string) => (href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 
@@ -18,6 +20,7 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState<number | null>(null);
+  const [all, setAll] = useState(false);
   const box = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: 0, y: 0 });
   const target = useRef({ x: 0, y: 0 });
@@ -31,7 +34,8 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
     const el = box.current;
     if (!el) return;
     const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const p = pos.current, t = target.current;
+    const p = pos.current,
+      t = target.current;
     const dx = (t.x - p.x) * (still ? 1 : 0.18);
     p.x += dx;
     p.y += (t.y - p.y) * (still ? 1 : 0.18);
@@ -81,70 +85,104 @@ export function ProjectRows({ projects }: { projects: Project[] }) {
   }
 
   const p = projects[current];
+  const more = projects.length > FIRST;
 
-  return (
-    <div className="grid max-w-[820px]" onPointerMove={onMove} onMouseLeave={hide} onBlur={hide}>
-      {projects.map((proj, i) => (
-        <div
-          key={proj.name}
-          data-row
-          onMouseEnter={() => show(i)}
-          className="group relative grid grid-cols-[1fr_auto] items-baseline gap-4 border-t border-line py-3 last:border-b max-[900px]:grid-cols-1 max-[900px]:gap-2"
-        >
-          <span>
-            {/* The name is the row's link; its ::after covers the whole row. */}
-            <a
-              href={proj.links[0].href}
-              {...external(proj.links[0].href)}
-              onFocus={(e) => onFocus(i, e)}
-              onClick={(e) => onTap(i, e)}
-              aria-expanded={open === i}
-              aria-controls={`preview-${i}`}
-              className="heading-5 transition-colors duration-300 ease-curve after:absolute after:inset-0 group-hover:text-accent focus-visible:text-accent"
-            >
-              {proj.name}
-            </a>
-            <span className="title-2 ml-3 text-muted transition-colors duration-300 ease-curve group-hover:text-text max-[900px]:mt-0.5 max-[900px]:ml-0 max-[900px]:block">
-              {proj.line}
-            </span>
-          </span>
-          <span className="flex items-center gap-4">
-            {proj.label && <span className="caption-5 text-dim max-[900px]:hidden">{proj.label}</span>}
-            <span className="relative z-10 flex items-center gap-3">
-              {proj.links.map((l) => {
-                const { icon: Icon, label } = LINK_ICONS[l.kind];
-                return (
-                  <a
-                    key={l.href}
-                    href={l.href}
-                    {...external(l.href)}
-                    aria-label={`${proj.name}: ${label}`}
-                    title={label}
-                    className="text-dim transition-colors duration-300 ease-curve hover:text-ink"
-                  >
-                    <Icon className="size-4" aria-hidden="true" />
-                  </a>
-                );
-              })}
-            </span>
-          </span>
-          {/* Phones: the preview opens in place under the row. */}
-          <div
-            id={`preview-${i}`}
-            className={`grid transition-[grid-template-rows,opacity] duration-500 ease-curve min-[901px]:hidden ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+  function row(proj: Project, i: number) {
+    return (
+      <div
+        key={proj.name}
+        data-row
+        onMouseEnter={() => show(i)}
+        className="group relative grid grid-cols-[1fr_auto] items-baseline gap-4 border-t border-line py-3 max-[900px]:grid-cols-1 max-[900px]:gap-2"
+      >
+        <span>
+          {/* The name is the row's link; its ::after covers the whole row. */}
+          <a
+            href={proj.links[0].href}
+            {...external(proj.links[0].href)}
+            onFocus={(e) => onFocus(i, e)}
+            onClick={(e) => onTap(i, e)}
+            aria-expanded={open === i}
+            aria-controls={`preview-${i}`}
+            className="heading-5 transition-colors duration-300 ease-curve after:absolute after:inset-0 group-hover:text-accent focus-visible:text-accent"
           >
-            <div className="overflow-hidden">
-              <div className="pt-2 pb-1">
-                <div className="relative aspect-16/10 overflow-hidden rounded-lg border border-line">
-                  <Image src={proj.image} alt="" fill sizes="(max-width: 900px) 100vw, 1px" className="object-cover object-top" />
-                </div>
-                <p className="body-3 mt-3 text-text">{proj.description}</p>
-                <p className="caption-5 mt-2 text-muted">{proj.tech.join(" · ")}</p>
+            {proj.name}
+          </a>
+          <span className="title-2 ml-3 text-muted transition-colors duration-300 ease-curve group-hover:text-text max-[900px]:mt-0.5 max-[900px]:ml-0 max-[900px]:block">
+            {proj.line}
+          </span>
+        </span>
+        <span className="flex items-center gap-4">
+          {proj.label && <span className="caption-5 text-dim max-[900px]:hidden">{proj.label}</span>}
+          <span className="relative z-10 flex items-center gap-3">
+            {proj.links.map((l) => {
+              const { icon: Icon, label } = LINK_ICONS[l.kind];
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  {...external(l.href)}
+                  aria-label={`${proj.name}: ${label}`}
+                  title={label}
+                  className="text-dim transition-colors duration-300 ease-curve hover:text-ink"
+                >
+                  <Icon className="size-4" aria-hidden="true" />
+                </a>
+              );
+            })}
+          </span>
+        </span>
+        {/* Phones: the preview opens in place under the row. */}
+        <div
+          id={`preview-${i}`}
+          className={`grid transition-[grid-template-rows,opacity] duration-500 ease-curve min-[901px]:hidden ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+        >
+          <div className="overflow-hidden">
+            <div className="pt-2 pb-1">
+              <div className="relative aspect-16/10 overflow-hidden rounded-lg border border-line">
+                <Image
+                  src={proj.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 100vw, 1px"
+                  className="object-cover object-top"
+                />
               </div>
+              <p className="body-3 mt-3 text-text">{proj.description}</p>
+              <p className="caption-5 mt-2 text-muted">{proj.tech.join(" · ")}</p>
             </div>
           </div>
         </div>
-      ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid max-w-[820px]" onPointerMove={onMove} onMouseLeave={hide} onBlur={hide}>
+      <div className="grid border-b border-line">
+        {projects.slice(0, FIRST).map((proj, i) => row(proj, i))}
+        {/* The rest open in place; inert while closed so they cannot be tabbed to. */}
+        {more && (
+          <div
+            id="more-projects"
+            inert={!all}
+            className={`grid transition-[grid-template-rows,opacity] duration-500 ease-curve ${all ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+          >
+            <div className="grid overflow-hidden">{projects.slice(FIRST).map((proj, i) => row(proj, i + FIRST))}</div>
+          </div>
+        )}
+      </div>
+      {more && (
+        <button
+          type="button"
+          aria-expanded={all}
+          aria-controls="more-projects"
+          onClick={() => setAll((a) => !a)}
+          className="button-sm mt-6 justify-self-start rounded-lg border border-line bg-surface px-4 py-2 text-text transition-[color,translate,scale] duration-300 ease-curve hover:-translate-y-px hover:text-ink active:scale-[.98]"
+        >
+          {all ? "Show fewer" : "Show all"}
+        </button>
+      )}
 
       {/* One floating card for the whole list; it follows the cursor and swaps content per row. */}
       <div

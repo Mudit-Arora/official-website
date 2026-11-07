@@ -57,7 +57,7 @@ export const projects: Project[] = [
   {
     name: "EduMUSE",
     line: "a multi agent tutor that talks you through your notes",
-    label: "2025",
+    label: "",
     description:
       "An AI tutor that turns study material into personal lessons, built from agents for reading documents, finding knowledge and tutoring.",
     tech: ["CrewAI", "SerperDev", "ElevenLabs", "React", "Material UI", "OpenAI API"],
@@ -93,7 +93,7 @@ export const projects: Project[] = [
   {
     name: "Language modelling",
     line: "a decoder only transformer, from scratch",
-    label: "PyTorch",
+    label: "",
     description: "A decoder only transformer built from scratch in PyTorch for next word prediction.",
     tech: ["PyTorch", "Transformers", "NLP"],
     links: [{ kind: "report", href: "/NLP_243_Homework_3.pdf" }],

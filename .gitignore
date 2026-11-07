@@ -23,3 +23,12 @@ next-env.d.ts
 
 # local browser screenshots
 .playwright-mcp/
+/photo-originals
+
+# local notes, design files and Claude Code setup (kept on disk, not in the repo)
+CLAUDE.md
+AGENTS.md
+/design/
+.claude/
+.agents/
+skills-lock.json

@@ -289,9 +289,16 @@
   }
 }
 .album[data-open] .album-card {
-  z-index: 20;
   transform: translate(calc(var(--ox) * var(--spread) * 1px), calc(var(--oy) * 1px))
     rotate(calc(var(--or) * 1deg)) scale(1.12);
+}
+/* Photos beyond the first three wait inside the folder, behind the front panel. */
+.album-card {
+  transition-property: transform, opacity;
+}
+.album .album-card[data-hidden] {
+  opacity: 0;
+  transform: translate(calc(var(--rx) * 1px), calc(var(--ry) * 1px)) rotate(calc(var(--rr) * 1deg));
 }
 
 /* Cursor: a themed arrow, and a pointing hand over anything clickable (public/cursors/,
